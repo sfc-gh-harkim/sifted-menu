@@ -82,12 +82,13 @@ function renderDish(dish) {
   const detailsBody = desc
     ? `<div class="dish__details">${escape(desc)}</div>`
     : `<div class="dish__details dish__details--empty">No ingredient list provided.</div>`;
+  const tags = renderTags(dietaryTags(dish));
   return `
     <details class="dish">
       <summary class="dish__row">
         <span class="dish__chevron" aria-hidden="true">&rsaquo;</span>
         <p class="dish__title">${escape(titleCase(dish.title))}</p>
-        ${renderTags(dietaryTags(dish))}
+        ${tags}
       </summary>
       ${detailsBody}
     </details>
@@ -96,17 +97,15 @@ function renderDish(dish) {
 
 function renderStation(station, sourceUrl, isLastCentered) {
   const isSaladBar = station.id === "wrap-culture";
-  const sourceLink = sourceUrl
-    ? `<a class="station__source" href="${escape(sourceUrl)}" target="_blank" rel="noopener" aria-label="${escape(station.name)} on Sifted">View on Sifted &rarr;</a>`
-    : "";
+
+  const nameInner = sourceUrl
+    ? `<a href="${escape(sourceUrl)}" target="_blank" rel="noopener">${escape(station.name)}</a>`
+    : escape(station.name);
 
   const head = `
     <header class="station__head">
-      <div class="station__heading">
-        <h3 class="station__name">${escape(station.name)}</h3>
-        ${station.tagline ? `<p class="station__tagline">${escape(station.tagline)}</p>` : ""}
-      </div>
-      ${sourceLink}
+      <h3 class="station__name">${nameInner}</h3>
+      ${station.tagline ? `<p class="station__tagline">${escape(station.tagline)}</p>` : ""}
     </header>
   `;
 
