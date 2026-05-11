@@ -58,12 +58,12 @@ function renderAllergens(allergens, className = "dish__allergens") {
   return `<div class="${className}">${pills}</div>`;
 }
 
-function renderDish(dish) {
+function renderDish(dish, isLastCentered) {
+  const cls = isLastCentered ? "dish dish--last-centered" : "dish";
   return `
-    <li class="dish">
+    <li class="${cls}">
       <div class="dish__head">
         <h4 class="dish__title">${escape(titleCase(dish.title))}</h4>
-        <span class="dish__leader" aria-hidden="true"></span>
         ${renderAllergens(dish.allergens)}
       </div>
       ${
@@ -75,20 +75,46 @@ function renderDish(dish) {
   `;
 }
 
-function renderStation(station) {
+function renderDishes(dishes) {
+  if (!dishes || dishes.length === 0) return "";
+  if (dishes.length === 1) {
+    return `<ul class="dishes dishes--single">${renderDish(dishes[0], false)}</ul>`;
+  }
+  const isOdd = dishes.length % 2 === 1;
+  const items = dishes
+    .map((d, i) => renderDish(d, isOdd && i === dishes.length - 1))
+    .join("");
+  return `<ul class="dishes">${items}</ul>`;
+}
+
+function renderStation(station, sourceUrl) {
+  const sourceLink = sourceUrl
+    ? `<a class="station__source" href="${escape(sourceUrl)}" target="_blank" rel="noopener" aria-label="${escape(station.name)} on Sifted">
+         View on Sifted <span class="station__source-arrow" aria-hidden="true">&rarr;</span>
+       </a>`
+    : "";
+
+  const head = `
+    <header class="station__head">
+      <div class="station__heading">
+        <h3 class="station__name">${escape(station.name)}</h3>
+        ${station.tagline ? `<p class="station__tagline">${escape(station.tagline)}</p>` : ""}
+      </div>
+      ${sourceLink}
+    </header>
+  `;
+
   const hasContent =
     station.hero || (station.dishes && station.dishes.length > 0);
   if (!hasContent) {
     return `
-      <section class="station">
-        <header class="station__head">
-          <h3 class="station__name">${escape(station.name)}</h3>
-          ${station.tagline ? `<p class="station__tagline">${escape(station.tagline)}</p>` : ""}
-        </header>
+      <section class="station" id="station-${escape(station.id)}">
+        ${head}
         <p class="station__empty">Menu coming soon.</p>
       </section>
     `;
   }
+
   const hero = station.hero
     ? `<p class="station__hero">${escape(titleCase(station.hero))}</p>`
     : "";
@@ -96,25 +122,21 @@ function renderStation(station) {
     station.heroAllergens,
     "station__hero-allergens",
   );
-  const dishes =
-    station.dishes && station.dishes.length
-      ? `<ul class="dishes">${station.dishes.map(renderDish).join("")}</ul>`
-      : "";
+
   return `
     <section class="station" id="station-${escape(station.id)}">
-      <header class="station__head">
-        <h3 class="station__name">${escape(station.name)}</h3>
-        ${station.tagline ? `<p class="station__tagline">${escape(station.tagline)}</p>` : ""}
-      </header>
+      ${head}
       ${hero}
       ${heroAllergens}
-      ${dishes}
+      ${renderDishes(station.dishes)}
     </section>
   `;
 }
 
-function renderDay(day) {
-  const stations = day.stations.map(renderStation).join("");
+function renderDay(day, sourcesById) {
+  const stations = day.stations
+    .map((s) => renderStation(s, sourcesById.get(s.id)))
+    .join("");
   return `
     <article class="day-panel" role="tabpanel">
       <header class="day-header">
@@ -146,14 +168,14 @@ function renderDayNav(days, activeIdx) {
     .join("");
 }
 
-function setActive(days, idx) {
+function setActive(days, idx, sourcesById) {
   for (const btn of dayNavEl.querySelectorAll(".day-tab")) {
     btn.setAttribute(
       "aria-selected",
       Number(btn.dataset.index) === idx ? "true" : "false",
     );
   }
-  menuEl.innerHTML = renderDay(days[idx]);
+  menuEl.innerHTML = renderDay(days[idx], sourcesById);
   if (history.replaceState) {
     history.replaceState(null, "", `#${days[idx].day.toLowerCase()}`);
   }
@@ -196,21 +218,25 @@ async function main() {
     return;
   }
 
+  const sourcesById = new Map(
+    (data.sources || []).map((s) => [s.id, s.url]),
+  );
+
   const initial =
     indexFromHash(days) >= 0 ? indexFromHash(days) : pickDefaultDayIndex(days);
   renderDayNav(days, initial);
-  setActive(days, initial);
+  setActive(days, initial, sourcesById);
 
   dayNavEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".day-tab");
     if (!btn) return;
-    setActive(days, Number(btn.dataset.index));
+    setActive(days, Number(btn.dataset.index), sourcesById);
     menuEl.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   window.addEventListener("hashchange", () => {
     const idx = indexFromHash(days);
-    if (idx >= 0) setActive(days, idx);
+    if (idx >= 0) setActive(days, idx, sourcesById);
   });
 }
 
