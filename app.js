@@ -249,17 +249,30 @@ async function main() {
     setActive(days, Number(btn.dataset.index), sourcesById);
   });
 
-  // Tap-to-toggle dish tooltips on touch devices (hover handles desktop).
-  // Tapping a different dish or anywhere else closes the open one.
-  document.addEventListener("click", (e) => {
+  // Touch devices only: tap-to-toggle the tooltip. We use pointerdown so
+  // we know the pointer type and avoid leaving the .is-open class
+  // hanging around on a mouse-driven device after the cursor moves away.
+  const isHoverDevice = window.matchMedia("(hover: hover)").matches;
+  document.addEventListener("pointerdown", (e) => {
+    if (isHoverDevice && e.pointerType === "mouse") return;
     const dish = e.target.closest(".dish[data-has-tip='true']");
     document.querySelectorAll(".dish.is-open").forEach((d) => {
       if (d !== dish) d.classList.remove("is-open");
     });
-    if (dish) {
-      dish.classList.toggle("is-open");
-    }
+    if (dish) dish.classList.toggle("is-open");
   });
+
+  // Belt-and-suspenders: if the pointer leaves an open dish (e.g. it was
+  // toggled open via keyboard or stale tap), clear the open state so the
+  // tooltip doesn't get stuck.
+  document.addEventListener(
+    "pointerleave",
+    (e) => {
+      const dish = e.target.closest?.(".dish.is-open");
+      if (dish) dish.classList.remove("is-open");
+    },
+    true,
+  );
 
   window.addEventListener("hashchange", () => {
     const idx = indexFromHash(days);

@@ -228,12 +228,12 @@ a {
   gap: 4px;
 }
 
-/* Tooltip */
+/* Tooltip — appears below the dish with a small gap */
 .dish__tip {
   position: absolute;
-  bottom: calc(100% - 2px);
+  top: calc(100% + 10px);
   left: 50%;
-  transform: translate(-50%, 4px);
+  transform: translate(-50%, -4px);
   background: var(--ink);
   color: #fff;
   font-family: var(--text);
@@ -247,24 +247,27 @@ a {
   white-space: pre-line;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 140ms ease, transform 140ms ease;
+  visibility: hidden;
+  transition: opacity 140ms ease, transform 140ms ease, visibility 0s linear 140ms;
   z-index: 10;
   box-shadow: 0 12px 28px -12px rgba(12, 12, 13, 0.4);
 }
 .dish__tip::after {
   content: "";
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 .dish:hover > .dish__tip,
 .dish:focus-visible > .dish__tip,
 .dish.is-open > .dish__tip {
   opacity: 1;
+  visibility: visible;
   transform: translate(-50%, 0);
+  transition: opacity 140ms ease, transform 140ms ease;
 }
 
 /* Wrap Culture variant: salad-bar style */
