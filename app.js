@@ -145,9 +145,9 @@ const PROTEIN_KW = /\b(chicken|turkey|beef|pork|ham|bacon|sausage|prosciutto|fis
 const VEG_KW = /\b(romaine|lettuce|spinach|kale|arugula|mix|green|broccoli|cauliflower|cabbage|slaw|sprout|carrot|cucumber|tomato|onion|scallion|chive|pepper|bell|jalapeno|jalapeño|pepperoncini|pickle|radish|beet|celery|mushroom|corn|pea|zucchini|squash|asparagus|eggplant|potato|fennel|grape|berry|apple|pear|orange|pomegranate|fruit|cherry|melon)/i;
 
 const SALAD_BUCKETS = [
+  { id: "vegetables", label: "Vegetables" },
   { id: "proteins", label: "Proteins" },
   { id: "toppings", label: "Toppings" },
-  { id: "vegetables", label: "Vegetables" },
   { id: "dressings", label: "Dressings" },
 ];
 
