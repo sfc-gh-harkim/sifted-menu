@@ -66,33 +66,55 @@ function dietaryTags(dish) {
   return tags;
 }
 
+const TAG_LABELS = { VEG: "V", GF: "GF" };
+
 function renderTags(tags) {
   if (!tags || tags.length === 0) return "";
   const pills = tags
     .map((t) => {
       const cls = t === "VEG" ? "tag tag--veg" : t === "GF" ? "tag tag--gf" : "tag";
-      return `<span class="${cls}">${escape(t)}</span>`;
+      const label = TAG_LABELS[t] ?? t;
+      return `<span class="${cls}" aria-label="${escape(t === "VEG" ? "Vegetarian" : t === "GF" ? "Gluten free" : t)}">${escape(label)}</span>`;
     })
     .join("");
-  return `<div class="dish__tags">${pills}</div>`;
+  return `<span class="dish__tags">${pills}</span>`;
 }
 
 function renderDish(dish) {
   const desc = (dish.description || "").trim();
-  const detailsBody = desc
-    ? `<div class="dish__details">${escape(desc)}</div>`
-    : `<div class="dish__details dish__details--empty">No ingredient list provided.</div>`;
   const tags = renderTags(dietaryTags(dish));
+  const tipAttrs = desc
+    ? ` data-has-tip="true" tabindex="0"`
+    : "";
+  const tip = desc
+    ? `<span class="dish__tip" role="tooltip">${escape(desc)}</span>`
+    : "";
   return `
-    <details class="dish">
-      <summary class="dish__row">
-        <span class="dish__chevron" aria-hidden="true">&rsaquo;</span>
-        <p class="dish__title">${escape(titleCase(dish.title))}</p>
-        ${tags}
-      </summary>
-      ${detailsBody}
-    </details>
+    <li class="dish"${tipAttrs}>
+      <p class="dish__title">${escape(titleCase(dish.title))}</p>
+      ${tags}
+      ${tip}
+    </li>
   `;
+}
+
+function normalizeName(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function reorderDishes(station) {
+  const hero = normalizeName(station.hero);
+  if (!hero) return station.dishes || [];
+  const dishes = [...(station.dishes || [])];
+  const idx = dishes.findIndex((d) => normalizeName(d.title) === hero);
+  if (idx > 0) {
+    const [match] = dishes.splice(idx, 1);
+    dishes.unshift(match);
+  }
+  return dishes;
 }
 
 function renderStation(station, sourceUrl, isLastCentered) {
@@ -109,8 +131,9 @@ function renderStation(station, sourceUrl, isLastCentered) {
     </header>
   `;
 
-  const dishes = station.dishes && station.dishes.length
-    ? `<div class="dishes">${station.dishes.map(renderDish).join("")}</div>`
+  const orderedDishes = reorderDishes(station);
+  const dishes = orderedDishes.length
+    ? `<ul class="dishes">${orderedDishes.map(renderDish).join("")}</ul>`
     : `<p class="station__empty">Menu coming soon.</p>`;
 
   const cls = [
@@ -137,11 +160,6 @@ function renderDay(day, sourcesById) {
     .join("");
 
   return `
-    <header class="day-header">
-      <p class="day-header__eyebrow">Today's Service</p>
-      <h2 class="day-header__day">${escape(day.day)}</h2>
-      <p class="day-header__date">${escape(day.date)}</p>
-    </header>
     <div class="stations-card">
       <div class="stations-grid">${stations}</div>
     </div>
@@ -229,6 +247,18 @@ async function main() {
     const btn = e.target.closest(".day-tab");
     if (!btn) return;
     setActive(days, Number(btn.dataset.index), sourcesById);
+  });
+
+  // Tap-to-toggle dish tooltips on touch devices (hover handles desktop).
+  // Tapping a different dish or anywhere else closes the open one.
+  document.addEventListener("click", (e) => {
+    const dish = e.target.closest(".dish[data-has-tip='true']");
+    document.querySelectorAll(".dish.is-open").forEach((d) => {
+      if (d !== dish) d.classList.remove("is-open");
+    });
+    if (dish) {
+      dish.classList.toggle("is-open");
+    }
   });
 
   window.addEventListener("hashchange", () => {
