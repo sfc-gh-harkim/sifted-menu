@@ -289,9 +289,12 @@ a {
 }
 .station--saladbar .dishes {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px clamp(40px, 5vw, 64px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px clamp(24px, 3vw, 40px);
   align-items: start;
+}
+.saladbar-col {
+  min-width: 0;
 }
 .saladbar-col__heading {
   font-family: var(--text);
@@ -308,10 +311,16 @@ a {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 720px) {
+@media (max-width: 960px) {
+  .station--saladbar .dishes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+@media (max-width: 520px) {
   .station--saladbar .dishes {
     grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+    gap: 20px;
   }
 }
 

@@ -135,21 +135,32 @@ function looksLikeHero(heroNorm, dishNorm) {
 
 // --- Wrap Culture salad-bar categorization -------------------------------
 // Sifted doesn't tag toppings with categories, so we use simple keyword
-// heuristics on the dish title to split the bar into two columns:
-//   Left  = proteins, cheeses, dressings, croutons, featured salads
-//   Right = vegetables and fruit
+// heuristics on the dish title to split the bar into four columns:
+//   Proteins, Toppings, Vegetables, Dressings.
 // Use word-start boundary only (no trailing \b) so plurals and inflections
 // match: "onion" hits "onions", "pickle" hits "pickled", etc.
-const DRESSING_KW = /\b(dressing|vinaigrette|sauce|aioli|pesto|mayo|yogurt|tahini|hummus)/i;
-const PROTEIN_KW = /\b(chicken|turkey|beef|pork|ham|bacon|sausage|fish|salmon|tuna|shrimp|tofu|seitan|tempeh|bean|chickpea|lentil|edamame|egg|cheese|feta|mozzarella|parmesan|paneer|halloumi|queso|jack|brie|crouton|tortilla|wrap)/i;
-const VEG_KW = /\b(romaine|lettuce|spinach|kale|arugula|mix|green|broccoli|cauliflower|cabbage|slaw|sprout|carrot|cucumber|tomato|onion|scallion|chive|pepper|bell|jalapeno|jalapeño|pepperoncini|pickle|radish|beet|celery|mushroom|corn|pea|zucchini|squash|asparagus|eggplant|potato|fennel|grape|berry|apple|pear|orange|pomegranate|raisin|cranberry|fruit|cherry)/i;
+const DRESSING_KW = /\b(dressing|vinaigrette|aioli|mayo|yogurt|tahini|hummus|pesto|sauce)/i;
+const TOPPING_KW = /\b(crouton|tortilla|wonton|chip|strip|wrap|cheese|feta|mozzarella|parmesan|paneer|halloumi|queso|jack|brie|cheddar|gouda|gruyere|provolone|nut|almond|walnut|pecan|cashew|pistachio|peanut|seed|sunflower|pumpkin|sesame|raisin|cranberry|currant|fried)/i;
+const PROTEIN_KW = /\b(chicken|turkey|beef|pork|ham|bacon|sausage|prosciutto|fish|salmon|tuna|cod|shrimp|prawn|crab|tofu|seitan|tempeh|bean|chickpea|garbanzo|lentil|edamame|egg|salad)/i;
+const VEG_KW = /\b(romaine|lettuce|spinach|kale|arugula|mix|green|broccoli|cauliflower|cabbage|slaw|sprout|carrot|cucumber|tomato|onion|scallion|chive|pepper|bell|jalapeno|jalapeño|pepperoncini|pickle|radish|beet|celery|mushroom|corn|pea|zucchini|squash|asparagus|eggplant|potato|fennel|grape|berry|apple|pear|orange|pomegranate|fruit|cherry|melon)/i;
+
+const SALAD_BUCKETS = [
+  { id: "proteins", label: "Proteins" },
+  { id: "toppings", label: "Toppings" },
+  { id: "vegetables", label: "Vegetables" },
+  { id: "dressings", label: "Dressings" },
+];
 
 function categorizeSaladItem(dish) {
   const t = (dish.title || "").toLowerCase();
-  if (DRESSING_KW.test(t)) return "left";
-  if (PROTEIN_KW.test(t)) return "left";
-  if (VEG_KW.test(t)) return "right";
-  return "left";
+  // Order matters: dressings first (a "tomato vinaigrette" is a dressing,
+  // not a vegetable), then toppings (so "blue cheese" doesn't get
+  // mis-bucketed as a protein), then proteins, then vegetables.
+  if (DRESSING_KW.test(t)) return "dressings";
+  if (TOPPING_KW.test(t)) return "toppings";
+  if (PROTEIN_KW.test(t)) return "proteins";
+  if (VEG_KW.test(t)) return "vegetables";
+  return "toppings";
 }
 
 function reorderDishes(station) {
@@ -185,18 +196,25 @@ function renderStation(station, sourceUrl, isLastCentered) {
   } else if (!orderedDishes.length) {
     dishes = `<p class="station__empty">Menu coming soon.</p>`;
   } else if (isSaladBar) {
-    const left = orderedDishes.filter((d) => categorizeSaladItem(d) === "left");
-    const right = orderedDishes.filter((d) => categorizeSaladItem(d) === "right");
-    const renderCol = (heading, items) =>
-      items.length
-        ? `<div>
-             <h4 class="saladbar-col__heading">${escape(heading)}</h4>
-             <ul class="saladbar-col__list">${items
-               .map((d) => renderDish(d, { showTags: false }))
-               .join("")}</ul>
-           </div>`
-        : "";
-    dishes = `<div class="dishes">${renderCol("Proteins & Toppings", left)}${renderCol("Vegetables", right)}</div>`;
+    const buckets = Object.fromEntries(
+      SALAD_BUCKETS.map((b) => [b.id, []]),
+    );
+    for (const d of orderedDishes) {
+      buckets[categorizeSaladItem(d)].push(d);
+    }
+    const renderCol = ({ id, label }) => {
+      const items = buckets[id];
+      if (!items.length) return "";
+      return `
+        <div class="saladbar-col">
+          <h4 class="saladbar-col__heading">${escape(label)}</h4>
+          <ul class="saladbar-col__list">${items
+            .map((d) => renderDish(d, { showTags: false }))
+            .join("")}</ul>
+        </div>
+      `;
+    };
+    dishes = `<div class="dishes">${SALAD_BUCKETS.map(renderCol).join("")}</div>`;
   } else {
     dishes = `<ul class="dishes">${orderedDishes
       .map((d) => renderDish(d, { showTags: true }))
