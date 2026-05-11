@@ -105,11 +105,39 @@ function normalizeName(s) {
     .trim();
 }
 
+// Tiny Levenshtein implementation; tolerates the typos that show up in
+// Sifted's hand-edited menus (e.g. "Mediteranean" vs "Mediterranean").
+function editDistance(a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const curr = [i];
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr.push(Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost));
+    }
+    prev = curr;
+  }
+  return prev[b.length];
+}
+
+function looksLikeHero(heroNorm, dishNorm) {
+  if (!heroNorm || !dishNorm) return false;
+  if (heroNorm === dishNorm) return true;
+  if (heroNorm.includes(dishNorm) || dishNorm.includes(heroNorm)) return true;
+  // Allow ~10% character difference (rounded up) to absorb typos.
+  const maxLen = Math.max(heroNorm.length, dishNorm.length);
+  const threshold = Math.max(2, Math.ceil(maxLen * 0.1));
+  return editDistance(heroNorm, dishNorm) <= threshold;
+}
+
 function reorderDishes(station) {
   const hero = normalizeName(station.hero);
   if (!hero) return station.dishes || [];
   const dishes = [...(station.dishes || [])];
-  const idx = dishes.findIndex((d) => normalizeName(d.title) === hero);
+  const idx = dishes.findIndex((d) => looksLikeHero(hero, normalizeName(d.title)));
   if (idx > 0) {
     const [match] = dishes.splice(idx, 1);
     dishes.unshift(match);
