@@ -80,9 +80,9 @@ function renderTags(tags) {
   return `<span class="dish__tags">${pills}</span>`;
 }
 
-function renderDish(dish) {
+function renderDish(dish, { showTags = true } = {}) {
   const desc = (dish.description || "").trim();
-  const tags = renderTags(dietaryTags(dish));
+  const tags = showTags ? renderTags(dietaryTags(dish)) : "";
   const tipAttrs = desc
     ? ` data-has-tip="true" tabindex="0"`
     : "";
@@ -161,7 +161,9 @@ function renderStation(station, sourceUrl, isLastCentered) {
 
   const orderedDishes = reorderDishes(station);
   const dishes = orderedDishes.length
-    ? `<ul class="dishes">${orderedDishes.map(renderDish).join("")}</ul>`
+    ? `<ul class="dishes">${orderedDishes
+        .map((d) => renderDish(d, { showTags: !isSaladBar }))
+        .join("")}</ul>`
     : `<p class="station__empty">Menu coming soon.</p>`;
 
   const cls = [

@@ -215,13 +215,10 @@ a {
   line-height: 1.3;
   transition: color 120ms ease;
 }
-.dish[data-has-tip="true"] {
-  cursor: help;
-}
 .dish[data-has-tip="true"]:hover .dish__title,
 .dish[data-has-tip="true"].is-open .dish__title,
 .dish[data-has-tip="true"]:focus-visible .dish__title {
-  color: var(--accent);
+  color: var(--ink-soft);
 }
 .dish__tags {
   display: inline-flex;
