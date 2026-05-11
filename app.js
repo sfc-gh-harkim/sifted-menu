@@ -48,10 +48,20 @@ function shortDate(dateStr) {
   return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+// Use the JS day index instead of a locale-dependent weekday string so
+// non-English browsers still match Sifted's English day labels.
+const DAY_INDEX_TO_NAME = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 function pickDefaultDayIndex(days) {
-  const todayName = new Date().toLocaleDateString(undefined, {
-    weekday: "long",
-  });
+  const todayName = DAY_INDEX_TO_NAME[new Date().getDay()];
   const idx = days.findIndex((d) => d.day === todayName);
   return idx >= 0 ? idx : 0;
 }
@@ -289,15 +299,6 @@ function setActive(days, idx, sourcesById) {
     );
   }
   menuEl.innerHTML = renderDay(days[idx], sourcesById);
-  if (history.replaceState) {
-    history.replaceState(null, "", `#${days[idx].day.toLowerCase()}`);
-  }
-}
-
-function indexFromHash(days) {
-  const hash = window.location.hash.replace("#", "").toLowerCase();
-  if (!hash) return -1;
-  return days.findIndex((d) => d.day.toLowerCase() === hash);
 }
 
 async function main() {
@@ -333,6 +334,9 @@ async function main() {
 
   const sourcesById = new Map((data.sources || []).map((s) => [s.id, s.url]));
 
+  // Always default to today on load. We honor a #monday/#tuesday hash if
+  // the user explicitly typed/shared one, but we don't write the hash
+  // ourselves — that way refreshing the page always returns you to today.
   const initial =
     indexFromHash(days) >= 0 ? indexFromHash(days) : pickDefaultDayIndex(days);
   renderDayNav(days, initial);
