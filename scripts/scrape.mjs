@@ -117,6 +117,25 @@ async function main() {
         hero: day.hero,
         heroAllergens: day.heroAllergens,
         dishes: day.dishes,
+        inService: true,
+      });
+    }
+  }
+
+  // Make sure every station appears on every day, marking the ones the
+  // source page didn't list as "not in service" so they still render.
+  for (const d of byDay.values()) {
+    const present = new Set(d.stations.map((s) => s.id));
+    for (const meta of STATIONS) {
+      if (present.has(meta.id)) continue;
+      d.stations.push({
+        id: meta.id,
+        name: meta.name,
+        tagline: meta.tagline,
+        hero: "",
+        heroAllergens: [],
+        dishes: [],
+        inService: false,
       });
     }
   }

@@ -327,10 +327,20 @@ a {
 
 .station__empty {
   font-family: var(--text);
-  color: var(--ink-soft);
+  color: var(--ink-faint);
   font-size: 13px;
+  font-style: italic;
   margin: 0;
   text-align: center;
+}
+
+/* A station that has no menu for the day is dimmed but still visible
+   so people can see at a glance which stations are off today. */
+.station--off {
+  opacity: 0.5;
+}
+.station--off .station__name a {
+  pointer-events: none;
 }
 
 /* Footer */

@@ -180,7 +180,9 @@ function renderStation(station, sourceUrl, isLastCentered) {
 
   const orderedDishes = reorderDishes(station);
   let dishes;
-  if (!orderedDishes.length) {
+  if (station.inService === false) {
+    dishes = `<p class="station__empty">Not in service today</p>`;
+  } else if (!orderedDishes.length) {
     dishes = `<p class="station__empty">Menu coming soon.</p>`;
   } else if (isSaladBar) {
     const left = orderedDishes.filter((d) => categorizeSaladItem(d) === "left");
@@ -204,9 +206,10 @@ function renderStation(station, sourceUrl, isLastCentered) {
   const cls = [
     "station",
     isLastCentered ? "station--last-centered" : "",
-    isSaladBar ? "station--saladbar" : "",
+    isSaladBar && station.inService !== false ? "station--saladbar" : "",
     station.id === "wrap-culture" ? "station--full-row" : "",
     station.id === "sweet-spot" ? "station--narrow" : "",
+    station.inService === false ? "station--off" : "",
   ]
     .filter(Boolean)
     .join(" ");

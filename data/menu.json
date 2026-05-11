@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T18:11:09.396Z",
+  "generatedAt": "2026-05-11T18:19:02.379Z",
   "weekLabel": "Week of 11 May",
   "surveyUrl": "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
   "sources": [
@@ -45,16 +45,16 @@
           "tagline": "Clean, vibrant, plant-forward",
           "hero": "Mediteranean Pork Loin",
           "heroAllergens": [
-            "Sesame",
-            "Soy"
+            "Soy",
+            "Sesame"
           ],
           "dishes": [
             {
               "title": "PORK SALAD",
               "description": "Pork Shoulder, Gochujang, Gochugaru, Sesame oil, Soy sauce, mirin, Garlic, Ginger, Rice Bran Oil, mayo, red onion",
               "allergens": [
-                "Sesame",
-                "Soy"
+                "Soy",
+                "Sesame"
               ]
             },
             {
@@ -84,7 +84,8 @@
               "description": "quinoa, herbs, olive oil, salt, pepper",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "rotating-plate",
@@ -147,7 +148,8 @@
               "description": "White Beans, molasses, dark brown sugar, Dijon, ketchup, tomato paste, apple cider vinegar, Worcestershire sauce, black pepper,  salt, onions",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wok-n-tandoor",
@@ -186,12 +188,12 @@
               "description": "garlic, parsley, butter, naan*",
               "allergens": [
                 "Soy",
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
-              "title": "Lemon",
+              "title": "Lime",
               "description": "lemon",
               "allergens": []
             },
@@ -215,7 +217,17 @@
               "description": "Black Chickpeas, Rice Bran Oil, Salt, Pepper, Ginger, Garlic, Coriander seeds, Cumin Seeds, Clove, Green Cardamom, Black Cardamom, Fennel seed, Bay Leaf, tomato, paprik, curry powder",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
+        },
+        {
+          "id": "hot-hands",
+          "name": "Hot Hands",
+          "tagline": "Sandwiches, pizzas, and other handhelds",
+          "hero": "",
+          "heroAllergens": [],
+          "dishes": [],
+          "inService": false
         },
         {
           "id": "wrap-culture",
@@ -223,8 +235,8 @@
           "tagline": "Hand-rolled wraps from around the globe",
           "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
           "heroAllergens": [
-            "Fish",
             "Milk",
+            "Fish",
             "Soy",
             "Wheat",
             "Egg"
@@ -239,8 +251,8 @@
               "title": "BROCCOLI SLAW",
               "description": "Broccoli, caesar dressing, parmesan",
               "allergens": [
-                "Fish",
-                "Milk"
+                "Milk",
+                "Fish"
               ]
             },
             {
@@ -267,9 +279,9 @@
               "title": "TOFU MUCH TO HANDLE",
               "description": "tofu, romain, balsamic roasted red onion, boccoli slaw, tomato, parmesan",
               "allergens": [
-                "Soy",
                 "Milk",
-                "Fish"
+                "Fish",
+                "Soy"
               ]
             },
             {
@@ -290,8 +302,8 @@
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
                 "Egg",
-                "Milk",
-                "Fish"
+                "Fish",
+                "Milk"
               ]
             },
             {
@@ -397,7 +409,8 @@
               "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "sweet-spot",
@@ -424,7 +437,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         }
       ]
     },
@@ -468,7 +482,8 @@
               "description": "rice, oil, salt",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "rotating-plate",
@@ -509,7 +524,8 @@
                 "Sesame"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wok-n-tandoor",
@@ -557,7 +573,8 @@
                 "Wheat"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "hot-hands",
@@ -610,7 +627,8 @@
               "description": "Corn, Cherry Tomato, Red Onion, Cilantro, Black Beans, Edamame, Parsley, Rice Bran Oil, Salt, Pepper, Lime Juice",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wrap-culture",
@@ -618,9 +636,9 @@
           "tagline": "Hand-rolled wraps from around the globe",
           "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
           "heroAllergens": [
-            "Fish",
             "Milk",
             "Egg",
+            "Fish",
             "Soy",
             "Wheat"
           ],
@@ -629,9 +647,9 @@
               "title": "Caesar Dressing",
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
-                "Fish",
                 "Milk",
-                "Egg"
+                "Egg",
+                "Fish"
               ]
             },
             {
@@ -650,8 +668,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -789,7 +807,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "sweet-spot",
@@ -816,7 +835,8 @@
                 "Wheat"
               ]
             }
-          ]
+          ],
+          "inService": true
         }
       ]
     },
@@ -860,7 +880,8 @@
               "description": "Chicken breast, Salt, Extra Virgin Olive Oil, herbs",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "rotating-plate",
@@ -898,7 +919,8 @@
               "description": "Sugar, Water, Maple syrup. Gochugaru, Red Wine Vinegar, Bay Leaves, Coriander seeds, Fennel seeds, Salt",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wok-n-tandoor",
@@ -907,8 +929,8 @@
           "hero": "fish curry",
           "heroAllergens": [
             "Milk",
-            "Wheat",
             "Egg",
+            "Wheat",
             "Fish"
           ],
           "dishes": [
@@ -923,9 +945,9 @@
               "title": "Naan",
               "description": "",
               "allergens": [
+                "Egg",
                 "Milk",
-                "Wheat",
-                "Egg"
+                "Wheat"
               ]
             },
             {
@@ -957,7 +979,8 @@
                 "Fish"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "hot-hands",
@@ -998,7 +1021,8 @@
                 "Wheat"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wrap-culture",
@@ -1009,8 +1033,8 @@
             "Wheat",
             "Milk",
             "Soy",
-            "Fish",
-            "Egg"
+            "Egg",
+            "Fish"
           ],
           "dishes": [
             {
@@ -1127,8 +1151,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
@@ -1168,8 +1192,8 @@
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
                 "Milk",
-                "Fish",
-                "Egg"
+                "Egg",
+                "Fish"
               ]
             },
             {
@@ -1177,7 +1201,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "sweet-spot",
@@ -1204,7 +1229,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         }
       ]
     },
@@ -1251,7 +1277,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "rotating-plate",
@@ -1284,7 +1311,8 @@
                 "Wheat"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wok-n-tandoor",
@@ -1333,7 +1361,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "hot-hands",
@@ -1374,7 +1403,8 @@
                 "Milk"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "wrap-culture",
@@ -1385,8 +1415,8 @@
             "Wheat",
             "Milk",
             "Soy",
-            "Egg",
-            "Fish"
+            "Fish",
+            "Egg"
           ],
           "dishes": [
             {
@@ -1519,9 +1549,9 @@
               "title": "Caesar Dressing",
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
+                "Fish",
                 "Egg",
-                "Milk",
-                "Fish"
+                "Milk"
               ]
             },
             {
@@ -1553,7 +1583,8 @@
                 "Soy"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "sweet-spot",
@@ -1580,7 +1611,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         }
       ]
     },
@@ -1624,7 +1656,8 @@
                 "Soy"
               ]
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "rotating-plate",
@@ -1667,8 +1700,8 @@
               "title": "EGG NOODLES*",
               "description": "",
               "allergens": [
-                "Wheat",
-                "Egg"
+                "Egg",
+                "Wheat"
               ]
             },
             {
@@ -1682,12 +1715,31 @@
               "title": "CHICKEN PAPRIKASH",
               "description": "Chicken Thigh, non-GMO rice bran oil, Paprika, Onion Powder, Garlic Powder, Salt, Pepper, Butter, Onion, Garlic, Flour, Paprika, Crushed Tomatoes, Chicken Drippings, Salt, Pepper, Sour Cream, Egg Noodles, Parsley, Paprika",
               "allergens": [
+                "Egg",
                 "Wheat",
-                "Milk",
-                "Egg"
+                "Milk"
               ]
             }
-          ]
+          ],
+          "inService": true
+        },
+        {
+          "id": "wok-n-tandoor",
+          "name": "Wok N' Tandoor",
+          "tagline": "Asian wok and Indian tandoor classics",
+          "hero": "",
+          "heroAllergens": [],
+          "dishes": [],
+          "inService": false
+        },
+        {
+          "id": "hot-hands",
+          "name": "Hot Hands",
+          "tagline": "Sandwiches, pizzas, and other handhelds",
+          "hero": "",
+          "heroAllergens": [],
+          "dishes": [],
+          "inService": false
         },
         {
           "id": "wrap-culture",
@@ -1866,7 +1918,8 @@
               "description": "",
               "allergens": []
             }
-          ]
+          ],
+          "inService": true
         },
         {
           "id": "sweet-spot",
@@ -1893,7 +1946,8 @@
                 "Wheat"
               ]
             }
-          ]
+          ],
+          "inService": true
         }
       ]
     }
