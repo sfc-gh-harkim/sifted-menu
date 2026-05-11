@@ -80,7 +80,6 @@ a {
   padding: 18px 16px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid var(--rule);
 }
 .day-nav__inner {
   max-width: 1040px;
