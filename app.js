@@ -133,6 +133,25 @@ function looksLikeHero(heroNorm, dishNorm) {
   return editDistance(heroNorm, dishNorm) <= threshold;
 }
 
+// --- Wrap Culture salad-bar categorization -------------------------------
+// Sifted doesn't tag toppings with categories, so we use simple keyword
+// heuristics on the dish title to split the bar into two columns:
+//   Left  = proteins, cheeses, dressings, croutons, featured salads
+//   Right = vegetables and fruit
+// Use word-start boundary only (no trailing \b) so plurals and inflections
+// match: "onion" hits "onions", "pickle" hits "pickled", etc.
+const DRESSING_KW = /\b(dressing|vinaigrette|sauce|aioli|pesto|mayo|yogurt|tahini|hummus)/i;
+const PROTEIN_KW = /\b(chicken|turkey|beef|pork|ham|bacon|sausage|fish|salmon|tuna|shrimp|tofu|seitan|tempeh|bean|chickpea|lentil|edamame|egg|cheese|feta|mozzarella|parmesan|paneer|halloumi|queso|jack|brie|crouton|tortilla|wrap)/i;
+const VEG_KW = /\b(romaine|lettuce|spinach|kale|arugula|mix|green|broccoli|cauliflower|cabbage|slaw|sprout|carrot|cucumber|tomato|onion|scallion|chive|pepper|bell|jalapeno|jalapeño|pepperoncini|pickle|radish|beet|celery|mushroom|corn|pea|zucchini|squash|asparagus|eggplant|potato|fennel|grape|berry|apple|pear|orange|pomegranate|raisin|cranberry|fruit|cherry)/i;
+
+function categorizeSaladItem(dish) {
+  const t = (dish.title || "").toLowerCase();
+  if (DRESSING_KW.test(t)) return "left";
+  if (PROTEIN_KW.test(t)) return "left";
+  if (VEG_KW.test(t)) return "right";
+  return "left";
+}
+
 function reorderDishes(station) {
   const hero = normalizeName(station.hero);
   if (!hero) return station.dishes || [];
@@ -160,16 +179,34 @@ function renderStation(station, sourceUrl, isLastCentered) {
   `;
 
   const orderedDishes = reorderDishes(station);
-  const dishes = orderedDishes.length
-    ? `<ul class="dishes">${orderedDishes
-        .map((d) => renderDish(d, { showTags: !isSaladBar }))
-        .join("")}</ul>`
-    : `<p class="station__empty">Menu coming soon.</p>`;
+  let dishes;
+  if (!orderedDishes.length) {
+    dishes = `<p class="station__empty">Menu coming soon.</p>`;
+  } else if (isSaladBar) {
+    const left = orderedDishes.filter((d) => categorizeSaladItem(d) === "left");
+    const right = orderedDishes.filter((d) => categorizeSaladItem(d) === "right");
+    const renderCol = (heading, items) =>
+      items.length
+        ? `<div>
+             <h4 class="saladbar-col__heading">${escape(heading)}</h4>
+             <ul class="saladbar-col__list">${items
+               .map((d) => renderDish(d, { showTags: false }))
+               .join("")}</ul>
+           </div>`
+        : "";
+    dishes = `<div class="dishes">${renderCol("Proteins & Toppings", left)}${renderCol("Vegetables", right)}</div>`;
+  } else {
+    dishes = `<ul class="dishes">${orderedDishes
+      .map((d) => renderDish(d, { showTags: true }))
+      .join("")}</ul>`;
+  }
 
   const cls = [
     "station",
     isLastCentered ? "station--last-centered" : "",
     isSaladBar ? "station--saladbar" : "",
+    station.id === "wrap-culture" ? "station--full-row" : "",
+    station.id === "sweet-spot" ? "station--narrow" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -182,11 +219,19 @@ function renderStation(station, sourceUrl, isLastCentered) {
 }
 
 function renderDay(day, sourcesById) {
-  const isOdd = day.stations.length % 2 === 1;
-  const stations = day.stations
-    .map((s, i) =>
-      renderStation(s, sourcesById.get(s.id), isOdd && i === day.stations.length - 1),
-    )
+  // Wrap Culture and Sweet Spot always get their own row at the bottom
+  // of the menu, regardless of how many other stations are present.
+  const ALWAYS_OWN_ROW = new Set(["wrap-culture", "sweet-spot"]);
+  const regulars = day.stations.filter((s) => !ALWAYS_OWN_ROW.has(s.id));
+  const specials = day.stations.filter((s) => ALWAYS_OWN_ROW.has(s.id));
+  const ordered = [...regulars, ...specials];
+  const regularsAreOdd = regulars.length % 2 === 1;
+
+  const stations = ordered
+    .map((s, i) => {
+      const isLastRegular = regularsAreOdd && i === regulars.length - 1;
+      return renderStation(s, sourcesById.get(s.id), isLastRegular);
+    })
     .join("");
 
   return `
