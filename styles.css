@@ -395,17 +395,45 @@ a {
 
 @media (max-width: 720px) {
   .masthead {
-    padding: 48px 24px 24px;
+    padding: 48px 24px 20px;
+  }
+  .menu {
+    margin: 16px auto 56px;
+    padding: 0;
   }
   .stations-card {
-    padding: 36px 24px;
+    padding: 32px 20px;
+    border: none;
+    box-shadow: none;
   }
   .stations-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 44px;
   }
-  .stations-grid > .station--last-centered {
+  .stations-grid > .station--last-centered,
+  .stations-grid > .station--narrow .dishes,
+  .stations-grid > .station--narrow .station__empty {
     max-width: 100%;
+  }
+
+  /* Day tabs scroll horizontally as a single row instead of wrapping. */
+  .day-nav {
+    padding: 14px 0;
+  }
+  .day-nav__inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .day-nav__inner::-webkit-scrollbar {
+    display: none;
+  }
+  .day-tab {
+    flex: 0 0 auto;
   }
 }
 
