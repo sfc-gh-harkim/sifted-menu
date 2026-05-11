@@ -4,9 +4,10 @@ on:
   push:
     branches: [main]
   schedule:
-    # Refresh every weekday morning at 13:00 UTC (06:00 PT) so the menu is
-    # current before folks head to lunch.
-    - cron: "0 13 * * 1-5"
+    # Refresh once a week, Monday morning. 14:00 UTC = 07:00 PDT / 06:00 PST.
+    # Sifted publishes the whole week's menu at once, so a single Monday
+    # scrape covers all five days.
+    - cron: "0 14 * * 1"
   workflow_dispatch:
 
 permissions:
