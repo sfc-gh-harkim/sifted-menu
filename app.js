@@ -334,15 +334,13 @@ async function main() {
 
   const sourcesById = new Map((data.sources || []).map((s) => [s.id, s.url]));
 
-  // Always default to today on load. We honor a #monday/#tuesday hash if
-  // the user explicitly typed/shared one, but we don't write the hash
-  // ourselves — that way refreshing the page always returns you to today.
-  const initial =
-    indexFromHash(days) >= 0 ? indexFromHash(days) : pickDefaultDayIndex(days);
+  // Always default to today on load.
+  const initial = pickDefaultDayIndex(days);
   renderDayNav(days, initial);
   setActive(days, initial, sourcesById);
 
-  // Tab clicks update the panel in place — no scroll, no jump.
+  // Tab clicks update the panel in place — no scroll, no jump, no URL
+  // hash update so refreshing always returns you to today.
   dayNavEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".day-tab");
     if (!btn) return;
@@ -373,11 +371,6 @@ async function main() {
     },
     true,
   );
-
-  window.addEventListener("hashchange", () => {
-    const idx = indexFromHash(days);
-    if (idx >= 0) setActive(days, idx, sourcesById);
-  });
 }
 
 main();
