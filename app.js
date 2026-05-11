@@ -78,15 +78,24 @@ function renderTags(tags) {
 }
 
 function renderDish(dish) {
+  const desc = (dish.description || "").trim();
+  const detailsBody = desc
+    ? `<div class="dish__details">${escape(desc)}</div>`
+    : `<div class="dish__details dish__details--empty">No ingredient list provided.</div>`;
   return `
-    <li class="dish">
-      <p class="dish__title">${escape(titleCase(dish.title))}</p>
-      ${renderTags(dietaryTags(dish))}
-    </li>
+    <details class="dish">
+      <summary class="dish__row">
+        <span class="dish__chevron" aria-hidden="true">&rsaquo;</span>
+        <p class="dish__title">${escape(titleCase(dish.title))}</p>
+        ${renderTags(dietaryTags(dish))}
+      </summary>
+      ${detailsBody}
+    </details>
   `;
 }
 
 function renderStation(station, sourceUrl, isLastCentered) {
+  const isSaladBar = station.id === "wrap-culture";
   const sourceLink = sourceUrl
     ? `<a class="station__source" href="${escape(sourceUrl)}" target="_blank" rel="noopener" aria-label="${escape(station.name)} on Sifted">View on Sifted &rarr;</a>`
     : "";
@@ -102,10 +111,16 @@ function renderStation(station, sourceUrl, isLastCentered) {
   `;
 
   const dishes = station.dishes && station.dishes.length
-    ? `<ul class="dishes">${station.dishes.map(renderDish).join("")}</ul>`
+    ? `<div class="dishes">${station.dishes.map(renderDish).join("")}</div>`
     : `<p class="station__empty">Menu coming soon.</p>`;
 
-  const cls = isLastCentered ? "station station--last-centered" : "station";
+  const cls = [
+    "station",
+    isLastCentered ? "station--last-centered" : "",
+    isSaladBar ? "station--saladbar" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   return `
     <section class="${cls}" id="station-${escape(station.id)}">
       ${head}
