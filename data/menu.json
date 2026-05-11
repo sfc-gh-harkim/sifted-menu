@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T16:23:59.558Z",
+  "generatedAt": "2026-05-11T18:11:09.396Z",
   "weekLabel": "Week of 11 May",
   "surveyUrl": "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
   "sources": [
@@ -17,6 +17,11 @@
       "id": "wok-n-tandoor",
       "name": "Wok N' Tandoor",
       "url": "https://eat.sifted.co/meals/7b143ea2-0e69-4a54-95ff-e07383ee664d"
+    },
+    {
+      "id": "hot-hands",
+      "name": "Hot Hands",
+      "url": "https://eat.sifted.co/meals/b507148b-aead-4e34-9542-828494b6bbc3"
     },
     {
       "id": "wrap-culture",
@@ -88,8 +93,8 @@
           "hero": "Pickle Brined Fried Chicken",
           "heroAllergens": [
             "Milk",
-            "Wheat",
             "Soy",
+            "Wheat",
             "Egg"
           ],
           "dishes": [
@@ -109,25 +114,25 @@
               "title": "FRIED TOFU",
               "description": "tofu, flour, cayenne pepper, black pepper, salt, paprika, onion powder, garlic powder, Vegan egg, Oat Milk, Gluten Free panko, cornstarch",
               "allergens": [
-                "Wheat",
-                "Soy"
+                "Soy",
+                "Wheat"
               ]
             },
             {
               "title": "Pickle brined FRIED CHICKEN",
               "description": "chicken thigh, buttermilk, salt, pepper, paprika, oregano, onion powder, garlic powder, flour, baking powder, cayenne, cornstarch, non-gmo rice bran oil, Tapioca Starch",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
               "title": "CORN BREAD",
               "description": "Flour, Cornmeal, Buttermilk, Butter, Sugar, Salt, Baking powder, Eggs, Salt, baking soda, honey",
               "allergens": [
-                "Wheat",
                 "Egg",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
@@ -151,10 +156,17 @@
           "hero": "Chicken Malay",
           "heroAllergens": [
             "Milk",
-            "Wheat",
-            "Soy"
+            "Soy",
+            "Wheat"
           ],
           "dishes": [
+            {
+              "title": "CHEDDAR AND SWISS",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
             {
               "title": "Halal CHICKEN MALAY",
               "description": "Halal Chicken Thigh, Rice bran oil, Cashew, green chili, american cheese, cheese curd, kasuri methi, white pepper, heavy cream, salt, ginger, garlic, paprika",
@@ -173,9 +185,9 @@
               "title": "Garlic Butter Naan",
               "description": "garlic, parsley, butter, naan*",
               "allergens": [
-                "Wheat",
+                "Soy",
                 "Milk",
-                "Soy"
+                "Wheat"
               ]
             },
             {
@@ -184,8 +196,8 @@
               "allergens": []
             },
             {
-              "title": "WOK FRIED Broccolini",
-              "description": "Broccolini, garlic, salt, pepper, rice bran oil, ginger",
+              "title": "WOK FRIED Broccoli",
+              "description": "Broccoli, garlic, salt, pepper, rice bran oil, ginger",
               "allergens": []
             },
             {
@@ -255,8 +267,8 @@
               "title": "TOFU MUCH TO HANDLE",
               "description": "tofu, romain, balsamic roasted red onion, boccoli slaw, tomato, parmesan",
               "allergens": [
-                "Milk",
                 "Soy",
+                "Milk",
                 "Fish"
               ]
             },
@@ -264,8 +276,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -277,9 +289,9 @@
               "title": "Caesar Dressing",
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
-                "Fish",
+                "Egg",
                 "Milk",
-                "Egg"
+                "Fish"
               ]
             },
             {
@@ -544,6 +556,59 @@
               "allergens": [
                 "Wheat"
               ]
+            }
+          ]
+        },
+        {
+          "id": "hot-hands",
+          "name": "Hot Hands",
+          "tagline": "Sandwiches, pizzas, and other handhelds",
+          "hero": "Hot Hands - Sandwich",
+          "heroAllergens": [
+            "Milk",
+            "Wheat"
+          ],
+          "dishes": [
+            {
+              "title": "Lime Crema",
+              "description": "sour cream*, lime juice, salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "ONION RINGS*",
+              "description": "",
+              "allergens": [
+                "Milk",
+                "Wheat"
+              ]
+            },
+            {
+              "title": "French Fries",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Turkey and Avocado Burrito",
+              "description": "Turkey Breast, Rice bran Oil, Herbs, Salt, Pepper, Flour tortilla, Avocado, Tomato, Lettuce, Chipotle Mayo (Chipotle Peppers, lemon Juice, Vegan Mayonnaise, Garlic, Salt Pepper) Cheddar Cheese",
+              "allergens": [
+                "Milk",
+                "Wheat"
+              ]
+            },
+            {
+              "title": "Sweet Potato and Avocado Burrito",
+              "description": "Sweet Potato, Rice bran Oil, Herbs, Salt, Pepper, Flour tortilla, Avocado, Tomato, Lettuce, Chipotle Mayo (Chipotle Peppers, lemon Juice, Vegan Mayonnaise, Garlic, Salt Pepper) Cheddar Cheese",
+              "allergens": [
+                "Wheat",
+                "Milk"
+              ]
+            },
+            {
+              "title": "Charred Corn Salad",
+              "description": "Corn, Cherry Tomato, Red Onion, Cilantro, Black Beans, Edamame, Parsley, Rice Bran Oil, Salt, Pepper, Lime Juice",
+              "allergens": []
             }
           ]
         },
@@ -842,8 +907,8 @@
           "hero": "fish curry",
           "heroAllergens": [
             "Milk",
-            "Egg",
             "Wheat",
+            "Egg",
             "Fish"
           ],
           "dishes": [
@@ -858,9 +923,9 @@
               "title": "Naan",
               "description": "",
               "allergens": [
-                "Egg",
                 "Milk",
-                "Wheat"
+                "Wheat",
+                "Egg"
               ]
             },
             {
@@ -895,6 +960,47 @@
           ]
         },
         {
+          "id": "hot-hands",
+          "name": "Hot Hands",
+          "tagline": "Sandwiches, pizzas, and other handhelds",
+          "hero": "Hot Hands - Pizza",
+          "heroAllergens": [
+            "Milk",
+            "Wheat"
+          ],
+          "dishes": [
+            {
+              "title": "PEPPERONI PIZZA",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Mozzarella Cheese, Pepperoni",
+              "allergens": [
+                "Milk",
+                "Wheat"
+              ]
+            },
+            {
+              "title": "CHOPPED SALAD",
+              "description": "Romaine lettuce, Radicchio, Garbanzo Bean, Tomato, Cucumber, Pickled Red Onion, Pickling Spice, Pepperoncini Peppers, Red Wine Vinegar, Dijon, Agave, Garlic, Oregano, Basil, Onion Powder, Salt, Black Pepper, Red Pepper Flake, Olive Oil, Rice Bran Oil, Basil, Parsley",
+              "allergens": []
+            },
+            {
+              "title": "Chicken Parmesan Pizza",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Chicken Breast, Bread Crumb, Egg, Parsley, Burrata Cheese",
+              "allergens": [
+                "Milk",
+                "Wheat"
+              ]
+            },
+            {
+              "title": "Classic Margherita",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper)",
+              "allergens": [
+                "Milk",
+                "Wheat"
+              ]
+            }
+          ]
+        },
+        {
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
@@ -903,8 +1009,8 @@
             "Wheat",
             "Milk",
             "Soy",
-            "Egg",
-            "Fish"
+            "Fish",
+            "Egg"
           ],
           "dishes": [
             {
@@ -1021,8 +1127,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -1062,8 +1168,8 @@
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
                 "Milk",
-                "Egg",
-                "Fish"
+                "Fish",
+                "Egg"
               ]
             },
             {
@@ -1230,6 +1336,47 @@
           ]
         },
         {
+          "id": "hot-hands",
+          "name": "Hot Hands",
+          "tagline": "Sandwiches, pizzas, and other handhelds",
+          "hero": "Hot Hands - Pizza",
+          "heroAllergens": [
+            "Wheat",
+            "Milk"
+          ],
+          "dishes": [
+            {
+              "title": "Sicilian Pizza with Finnochiona and Fennel Salad  Pizza",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper)",
+              "allergens": [
+                "Wheat",
+                "Milk"
+              ]
+            },
+            {
+              "title": "PEPPERONI PIZZA",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Mozzarella Cheese, Pepperoni",
+              "allergens": [
+                "Wheat",
+                "Milk"
+              ]
+            },
+            {
+              "title": "CHOPPED SALAD",
+              "description": "Romaine lettuce, cabbage, Radicchio, Garbanzo Bean, Tomato, Cucumber, Pickled Red Onion, Pickling Spice, Pepperoncini Peppers, Red Wine Vinegar, Agave, Garlic, Oregano, Basil, Salt, Black Pepper, Red Pepper Flake, Olive Oil, Rice Bran Oil, Basil, green onion, jalapeno",
+              "allergens": []
+            },
+            {
+              "title": "Blistered Tomato and Ricotta Pizza",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) tomatoes, ricotta",
+              "allergens": [
+                "Wheat",
+                "Milk"
+              ]
+            }
+          ]
+        },
+        {
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
@@ -1238,8 +1385,8 @@
             "Wheat",
             "Milk",
             "Soy",
-            "Fish",
-            "Egg"
+            "Egg",
+            "Fish"
           ],
           "dishes": [
             {
@@ -1300,8 +1447,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -1372,9 +1519,9 @@
               "title": "Caesar Dressing",
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
-                "Fish",
                 "Egg",
-                "Milk"
+                "Milk",
+                "Fish"
               ]
             },
             {
@@ -1635,8 +1782,8 @@
               "title": "BEAN THERE DONE THAT",
               "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -1671,8 +1818,8 @@
               "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
               "allergens": [
                 "Fish",
-                "Egg",
-                "Milk"
+                "Milk",
+                "Egg"
               ]
             },
             {

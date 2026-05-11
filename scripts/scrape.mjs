@@ -15,6 +15,7 @@ const STATIONS = [
   { id: "pure", name: "Pure", url: "https://eat.sifted.co/meals/659a82e0-6f43-432e-acf9-af733a7e1ef6", tagline: "Clean, vibrant, plant-forward" },
   { id: "rotating-plate", name: "Rotating Plate", url: "https://eat.sifted.co/meals/cdc9288e-8e59-43d9-a69d-404b8a936039", tagline: "A new chef's special every day" },
   { id: "wok-n-tandoor", name: "Wok N' Tandoor", url: "https://eat.sifted.co/meals/7b143ea2-0e69-4a54-95ff-e07383ee664d", tagline: "Asian wok and Indian tandoor classics" },
+  { id: "hot-hands", name: "Hot Hands", url: "https://eat.sifted.co/meals/b507148b-aead-4e34-9542-828494b6bbc3", tagline: "Sandwiches, pizzas, and other handhelds" },
   { id: "wrap-culture", name: "Wrap Culture", url: "https://eat.sifted.co/meals/15b2a5bb-da9f-43a9-808e-ffeb47ca040a", tagline: "Hand-rolled wraps from around the globe" },
   { id: "sweet-spot", name: "Sweet Spot", url: "https://eat.sifted.co/meals/e9699fc9-3bc1-4d04-be64-68ae4865b39a", tagline: "A little something sweet to finish" },
 ];
