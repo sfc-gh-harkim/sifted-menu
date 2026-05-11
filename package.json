@@ -1,0 +1,17 @@
+{
+  "name": "sifted-menu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Snowflake x Sifted Bellevue – a daily-first view of the Sifted weekly menu.",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/scrape.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}
