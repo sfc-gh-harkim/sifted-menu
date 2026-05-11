@@ -10,8 +10,8 @@
   --accent: #29b5e8;
   --tag-bg: #f0f0f2;
   --tag-ink: #4a4a52;
-  --shadow-card: 0 80px 160px -40px rgba(12, 12, 13, 0.18),
-    0 24px 60px -28px rgba(12, 12, 13, 0.08);
+  --shadow-card: 0 80px 160px -40px rgba(12, 12, 13, 0.08),
+    0 24px 60px -28px rgba(12, 12, 13, 0.04);
   --display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   --text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -359,8 +359,8 @@ a {
     --rule: #26262a;
     --tag-bg: #1f1f23;
     --tag-ink: #c5c5cd;
-    --shadow-card: 0 80px 160px -30px rgba(0, 0, 0, 0.7),
-      0 24px 60px -28px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 80px 160px -30px rgba(0, 0, 0, 0.4),
+      0 24px 60px -28px rgba(0, 0, 0, 0.25);
   }
   .day-nav {
     background: rgba(12, 12, 13, 0.85);
