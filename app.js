@@ -12,6 +12,12 @@ const SHORT_DAY = {
   Sunday: "Sun",
 };
 
+// Ingredient text contains a meat/seafood signal -> not vegetarian.
+const NON_VEG = /\b(chicken|beef|pork|lamb|bacon|ham|turkey|duck|sausage|prosciutto|pancetta|chorizo|pepperoni|salami|fish|shrimp|prawn|salmon|tuna|cod|halibut|crab|lobster|scallop|mussel|clam|oyster|squid|octopus|anchov|gelatin|veal)\b/i;
+
+// Ingredient text or allergens that imply gluten.
+const GLUTEN_KEYWORDS = /\b(wheat|flour|bread|panko|pasta|noodle|naan|tortilla|wrap|bun|pita|cracker|breadcrumb|barley|rye|seitan|soy sauce|tempura|cous ?cous|farro|bulgur)\b/i;
+
 const dayNavEl = document.getElementById("day-nav");
 const menuEl = document.getElementById("menu");
 const weekLabelEl = document.getElementById("week-label");
@@ -50,48 +56,39 @@ function pickDefaultDayIndex(days) {
   return idx >= 0 ? idx : 0;
 }
 
-function renderAllergens(allergens, className = "dish__allergens") {
-  if (!allergens || allergens.length === 0) return "";
-  const pills = allergens
-    .map((a) => `<span class="allergen">${escape(a)}</span>`)
-    .join("");
-  return `<div class="${className}">${pills}</div>`;
+function dietaryTags(dish) {
+  const text = `${dish.title || ""} ${dish.description || ""}`;
+  const allergens = (dish.allergens || []).map((a) => a.toLowerCase());
+  const tags = [];
+  if (!NON_VEG.test(text)) tags.push("VEG");
+  const hasWheatAllergen = allergens.includes("wheat") || allergens.includes("gluten");
+  if (!hasWheatAllergen && !GLUTEN_KEYWORDS.test(text)) tags.push("GF");
+  return tags;
 }
 
-function renderDish(dish, isLastCentered) {
-  const cls = isLastCentered ? "dish dish--last-centered" : "dish";
+function renderTags(tags) {
+  if (!tags || tags.length === 0) return "";
+  const pills = tags
+    .map((t) => {
+      const cls = t === "VEG" ? "tag tag--veg" : t === "GF" ? "tag tag--gf" : "tag";
+      return `<span class="${cls}">${escape(t)}</span>`;
+    })
+    .join("");
+  return `<div class="dish__tags">${pills}</div>`;
+}
+
+function renderDish(dish) {
   return `
-    <li class="${cls}">
-      <div class="dish__head">
-        <h4 class="dish__title">${escape(titleCase(dish.title))}</h4>
-        ${renderAllergens(dish.allergens)}
-      </div>
-      ${
-        dish.description
-          ? `<p class="dish__description">${escape(dish.description)}</p>`
-          : ""
-      }
+    <li class="dish">
+      <p class="dish__title">${escape(titleCase(dish.title))}</p>
+      ${renderTags(dietaryTags(dish))}
     </li>
   `;
 }
 
-function renderDishes(dishes) {
-  if (!dishes || dishes.length === 0) return "";
-  if (dishes.length === 1) {
-    return `<ul class="dishes dishes--single">${renderDish(dishes[0], false)}</ul>`;
-  }
-  const isOdd = dishes.length % 2 === 1;
-  const items = dishes
-    .map((d, i) => renderDish(d, isOdd && i === dishes.length - 1))
-    .join("");
-  return `<ul class="dishes">${items}</ul>`;
-}
-
-function renderStation(station, sourceUrl) {
+function renderStation(station, sourceUrl, isLastCentered) {
   const sourceLink = sourceUrl
-    ? `<a class="station__source" href="${escape(sourceUrl)}" target="_blank" rel="noopener" aria-label="${escape(station.name)} on Sifted">
-         View on Sifted <span class="station__source-arrow" aria-hidden="true">&rarr;</span>
-       </a>`
+    ? `<a class="station__source" href="${escape(sourceUrl)}" target="_blank" rel="noopener" aria-label="${escape(station.name)} on Sifted">View on Sifted &rarr;</a>`
     : "";
 
   const head = `
@@ -104,48 +101,36 @@ function renderStation(station, sourceUrl) {
     </header>
   `;
 
-  const hasContent =
-    station.hero || (station.dishes && station.dishes.length > 0);
-  if (!hasContent) {
-    return `
-      <section class="station" id="station-${escape(station.id)}">
-        ${head}
-        <p class="station__empty">Menu coming soon.</p>
-      </section>
-    `;
-  }
+  const dishes = station.dishes && station.dishes.length
+    ? `<ul class="dishes">${station.dishes.map(renderDish).join("")}</ul>`
+    : `<p class="station__empty">Menu coming soon.</p>`;
 
-  const hero = station.hero
-    ? `<p class="station__hero">${escape(titleCase(station.hero))}</p>`
-    : "";
-  const heroAllergens = renderAllergens(
-    station.heroAllergens,
-    "station__hero-allergens",
-  );
-
+  const cls = isLastCentered ? "station station--last-centered" : "station";
   return `
-    <section class="station" id="station-${escape(station.id)}">
+    <section class="${cls}" id="station-${escape(station.id)}">
       ${head}
-      ${hero}
-      ${heroAllergens}
-      ${renderDishes(station.dishes)}
+      ${dishes}
     </section>
   `;
 }
 
 function renderDay(day, sourcesById) {
+  const isOdd = day.stations.length % 2 === 1;
   const stations = day.stations
-    .map((s) => renderStation(s, sourcesById.get(s.id)))
+    .map((s, i) =>
+      renderStation(s, sourcesById.get(s.id), isOdd && i === day.stations.length - 1),
+    )
     .join("");
+
   return `
-    <article class="day-panel" role="tabpanel">
-      <header class="day-header">
-        <p class="day-header__eyebrow">Today's Service</p>
-        <h2 class="day-header__day">${escape(day.day)}</h2>
-        <p class="day-header__date">${escape(day.date)}</p>
-      </header>
-      ${stations}
-    </article>
+    <header class="day-header">
+      <p class="day-header__eyebrow">Today's Service</p>
+      <h2 class="day-header__day">${escape(day.day)}</h2>
+      <p class="day-header__date">${escape(day.date)}</p>
+    </header>
+    <div class="stations-card">
+      <div class="stations-grid">${stations}</div>
+    </div>
   `;
 }
 
@@ -218,20 +203,18 @@ async function main() {
     return;
   }
 
-  const sourcesById = new Map(
-    (data.sources || []).map((s) => [s.id, s.url]),
-  );
+  const sourcesById = new Map((data.sources || []).map((s) => [s.id, s.url]));
 
   const initial =
     indexFromHash(days) >= 0 ? indexFromHash(days) : pickDefaultDayIndex(days);
   renderDayNav(days, initial);
   setActive(days, initial, sourcesById);
 
+  // Tab clicks update the panel in place — no scroll, no jump.
   dayNavEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".day-tab");
     if (!btn) return;
     setActive(days, Number(btn.dataset.index), sourcesById);
-    menuEl.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   window.addEventListener("hashchange", () => {
