@@ -4,10 +4,11 @@ on:
   push:
     branches: [main]
   schedule:
-    # Refresh once a week, Monday morning. 14:00 UTC = 07:00 PDT / 06:00 PST.
-    # Sifted publishes the whole week's menu at once, so a single Monday
-    # scrape covers all five days.
-    - cron: "0 14 * * 1"
+    # Refresh once a week, Monday morning. 14:17 UTC ≈ 07:17 PDT / 06:17 PST.
+    # We deliberately avoid the top-of-hour slot (e.g. "0 14 * * 1") because
+    # GitHub Actions delays / silently drops scheduled jobs that pile up at
+    # :00 due to cron contention. Off-minute slots are much more reliable.
+    - cron: "17 14 * * 1"
   workflow_dispatch:
 
 permissions:
