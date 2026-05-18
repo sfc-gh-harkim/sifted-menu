@@ -154,6 +154,15 @@ const TOPPING_KW = /\b(crouton|tortilla|wonton|chip|strip|wrap|cheese|feta|mozza
 const PROTEIN_KW = /\b(chicken|turkey|beef|pork|ham|bacon|sausage|prosciutto|fish|salmon|tuna|cod|shrimp|prawn|crab|tofu|seitan|tempeh|bean|chickpea|garbanzo|lentil|edamame|egg|salad)/i;
 const VEG_KW = /\b(romaine|lettuce|spinach|kale|arugula|mix|green|broccoli|cauliflower|cabbage|slaw|sprout|carrot|cucumber|tomato|onion|scallion|chive|pepper|bell|jalapeno|jalapeño|pepperoncini|pickle|radish|beet|celery|mushroom|corn|pea|zucchini|squash|asparagus|eggplant|potato|fennel|grape|berry|apple|pear|orange|pomegranate|fruit|cherry|melon)/i;
 
+// Items we never want to show under Wrap Culture (e.g. drink-bar items
+// that aren't really salad-bar ingredients).
+const SALAD_HIDE = [/spa.?water/i];
+
+function isHiddenSaladItem(dish) {
+  const t = (dish.title || "").trim();
+  return SALAD_HIDE.some((re) => re.test(t));
+}
+
 const SALAD_BUCKETS = [
   { id: "vegetables", label: "Vegetables" },
   { id: "proteins", label: "Proteins" },
@@ -210,6 +219,7 @@ function renderStation(station, sourceUrl, isLastCentered) {
       SALAD_BUCKETS.map((b) => [b.id, []]),
     );
     for (const d of orderedDishes) {
+      if (isHiddenSaladItem(d)) continue;
       buckets[categorizeSaladItem(d)].push(d);
     }
     const renderCol = ({ id, label }) => {
