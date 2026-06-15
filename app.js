@@ -23,6 +23,31 @@ const menuEl = document.getElementById("menu");
 const weekLabelEl = document.getElementById("week-label");
 const surveyLinkEl = document.getElementById("survey-link");
 const generatedAtEl = document.getElementById("generated-at");
+const themeToggleEl = document.getElementById("theme-toggle");
+
+function getTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark"
+    ? "dark"
+    : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("sifted-menu-theme", theme);
+  if (themeToggleEl) {
+    const label =
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    themeToggleEl.setAttribute("aria-label", label);
+    themeToggleEl.title = label;
+  }
+}
+
+function initThemeToggle() {
+  if (!themeToggleEl) return;
+  themeToggleEl.addEventListener("click", () => {
+    applyTheme(getTheme() === "dark" ? "light" : "dark");
+  });
+}
 
 function escape(str) {
   return String(str ?? "").replace(/[&<>"']/g, (c) => ({
@@ -312,6 +337,7 @@ function setActive(days, idx, sourcesById) {
 }
 
 async function main() {
+  initThemeToggle();
   let data;
   try {
     const res = await fetch(DATA_URL, { cache: "no-cache" });
