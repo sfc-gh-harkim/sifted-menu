@@ -246,8 +246,8 @@ a {
   top: calc(100% + 10px);
   left: 50%;
   transform: translate(-50%, -4px);
-  background: var(--ink);
-  color: #fff;
+  background: var(--tip-bg);
+  color: var(--tip-text);
   font-family: var(--text);
   font-size: 12px;
   line-height: 1.5;
