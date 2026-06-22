@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-11T18:19:02.379Z",
-  "weekLabel": "Week of 11 May",
+  "generatedAt": "2026-06-22T18:02:14.365Z",
+  "weekLabel": "Week of 22 June",
   "surveyUrl": "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
   "sources": [
     {
@@ -37,51 +37,42 @@
   "days": [
     {
       "day": "Monday",
-      "date": "May 11, 2026",
+      "date": "Jun 22, 2026",
       "stations": [
         {
           "id": "pure",
           "name": "Pure",
           "tagline": "Clean, vibrant, plant-forward",
-          "hero": "Mediteranean Pork Loin",
+          "hero": "Grilled Chicken Breast",
           "heroAllergens": [
-            "Soy",
-            "Sesame"
+            "Wheat"
           ],
           "dishes": [
             {
-              "title": "PORK SALAD",
-              "description": "Pork Shoulder, Gochujang, Gochugaru, Sesame oil, Soy sauce, mirin, Garlic, Ginger, Rice Bran Oil, mayo, red onion",
+              "title": "WILD MUSHROOM WITH ANCIENT GRAINS",
+              "description": "Ancient Grains, Onion, Garlic, Mushroom, Parsley, Vegan Butter, Lemon Juice, Salt, rosemary, extra virgin olive oil",
               "allergens": [
-                "Soy",
-                "Sesame"
+                "Wheat"
               ]
             },
             {
-              "title": "Cauliflower Steak with Tahini Dressing",
-              "description": "cauliflower, rice bran oil, salt, pepper, tahini, lemon juice",
-              "allergens": [
-                "Sesame"
-              ]
-            },
-            {
-              "title": "Roasted Yellow Bell pepper SOUP",
-              "description": "onion, garlic, yellow bell pepper, brown rice, vegetable stock, agave, salt, pepper, green onion",
+              "title": "ROASTED TOFU",
+              "description": "Tofu, Extra Virgin Olive Oil, salt, pepper",
               "allergens": []
             },
             {
-              "title": "Mediterranean Pork Loin",
-              "description": "Pork loin, olive oil, salt, pepper, herbs",
+              "title": "BROCCOLI",
+              "description": "broccoli, salt",
               "allergens": []
             },
             {
-              "title": "Zucchini",
-              "description": "Zucchini, salt, pepper, rice bran oil",
+              "title": "Tomato SOUP",
+              "description": "tomatoes, roasted garlic, veg stock, agave, balsamic vinegar, salt, green onion",
               "allergens": []
             },
             {
-              "title": "quinoa",
-              "description": "quinoa, herbs, olive oil, salt, pepper",
+              "title": "Pan Seared Chicken Breast",
+              "description": "Chicken breast, Salt, Extra Virgin Olive Oil, Salsa Verde ( parsley, Capers, shallots, garlic, lemon juice,, coriander, smoked paprika, olive oil, kosher salt)",
               "allergens": []
             }
           ],
@@ -91,62 +82,53 @@
           "id": "rotating-plate",
           "name": "Rotating Plate",
           "tagline": "A new chef's special every day",
-          "hero": "Pickle Brined Fried Chicken",
+          "hero": "Tuscan Roast Pork & Broccoli Raab",
           "heroAllergens": [
-            "Milk",
-            "Soy",
+            "Fish",
             "Wheat",
-            "Egg"
+            "Egg",
+            "Milk"
           ],
           "dishes": [
             {
-              "title": "HONEY BUTTER",
-              "description": "butter, honey, salt",
-              "allergens": [
-                "Milk"
-              ]
-            },
-            {
-              "title": "Alabama White Sauce",
-              "description": "mayonnaise , apple cider vinegar, horseradish\nlemon juice, Worcestershire sauce, Dijon mustard\n black pepper, salt, garlic powder, onion powder, cayenne pepper ,honey",
+              "title": "ROASTED PEPPERS WITH GARLIC & OLIVE OIL",
+              "description": "Bell Pepper, Garlic, Parsley, Oregano, Salt, Pepper, Red wine vinegar",
               "allergens": []
             },
             {
-              "title": "FRIED TOFU",
-              "description": "tofu, flour, cayenne pepper, black pepper, salt, paprika, onion powder, garlic powder, Vegan egg, Oat Milk, Gluten Free panko, cornstarch",
+              "title": "TUSCAN ROAST PORK & BROCCOLI RAAB",
+              "description": "Pork Butt, Onion, Garlic, Onion, white wine, Sage, Oregano, Parsley, Lemon Zest, Salt, Pepper, Olive oil, Anchovy",
               "allergens": [
-                "Soy",
+                "Fish"
+              ]
+            },
+            {
+              "title": "HERB ROASTED PORTABELLA MUSHROOM STEAKS",
+              "description": "Portabella Mushroom, garlic, Herbs, Olive oil, Salt, Pepper",
+              "allergens": []
+            },
+            {
+              "title": "FOCACCIA BREAD",
+              "description": "Flour, yeast, water, olive oil, sugar, salt, herbs",
+              "allergens": [
                 "Wheat"
               ]
             },
             {
-              "title": "Pickle brined FRIED CHICKEN",
-              "description": "chicken thigh, buttermilk, salt, pepper, paprika, oregano, onion powder, garlic powder, flour, baking powder, cayenne, cornstarch, non-gmo rice bran oil, Tapioca Starch",
+              "title": "GEMELLI PASTA",
+              "description": "",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Wheat"
               ]
             },
             {
-              "title": "CORN BREAD",
-              "description": "Flour, Cornmeal, Buttermilk, Butter, Sugar, Salt, Baking powder, Eggs, Salt, baking soda, honey",
+              "title": "CAESAR SALAD",
+              "description": "Romaine Lettuce, Parmesan Cheese, Anchovy, Garlic, Dijon Mustard, Worcestershire Sauce, Salt, Lemon juice, Pepper",
               "allergens": [
                 "Egg",
-                "Milk",
-                "Wheat"
+                "Fish",
+                "Milk"
               ]
-            },
-            {
-              "title": "COLESLAW",
-              "description": "Cabbage, Carrots, Parsley, Vegan Mayonnnaise, Apple Cider Vinegar, Salt, Sugar.",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Baked Beans",
-              "description": "White Beans, molasses, dark brown sugar, Dijon, ketchup, tomato paste, apple cider vinegar, Worcestershire sauce, black pepper,  salt, onions",
-              "allergens": []
             }
           ],
           "inService": true
@@ -155,67 +137,44 @@
           "id": "wok-n-tandoor",
           "name": "Wok N' Tandoor",
           "tagline": "Asian wok and Indian tandoor classics",
-          "hero": "Chicken Malay",
+          "hero": "Vadouvan Braised Chicken",
           "heroAllergens": [
-            "Milk",
-            "Soy",
-            "Wheat"
+            "Milk"
           ],
           "dishes": [
             {
-              "title": "CHEDDAR AND SWISS",
-              "description": "",
+              "title": "ROASTED PANEER",
+              "description": "Paneer, Vadouvan Spice, Garlic, Ginger, Red Onion, Fenugreek leaves, Rice Bran Oil, Turmeric, Kashmiri Chili Powder, Cumin, Coriander, Curry Leaves, Cilantro, Lemon Juice.",
               "allergens": [
                 "Milk"
               ]
             },
             {
-              "title": "Halal CHICKEN MALAY",
-              "description": "Halal Chicken Thigh, Rice bran oil, Cashew, green chili, american cheese, cheese curd, kasuri methi, white pepper, heavy cream, salt, ginger, garlic, paprika",
-              "allergens": [
-                "Milk"
-              ]
-            },
-            {
-              "title": "CILANTRO CHUTNEY",
-              "description": "Cilantro, Chili, Ginger, Garlic, Yogurt, Salt, Lemon Juice, bell pepper, sugar, chaat masala",
-              "allergens": [
-                "Milk"
-              ]
-            },
-            {
-              "title": "Garlic Butter Naan",
-              "description": "garlic, parsley, butter, naan*",
-              "allergens": [
-                "Soy",
-                "Wheat",
-                "Milk"
-              ]
-            },
-            {
-              "title": "Lime",
-              "description": "lemon",
+              "title": "VADOUVAN BRAISED CHICKEN IN COCONUT MILK",
+              "description": "Diced Chicken, Vadouvan Spice, Garlic, Ginger, Onion, Coconut Milk, Fenugreek leaves, Rice Bran Oil, Turmeric, Kashmiri Chili Powder, Cumin, Coriander, Curry Leaves, Cilantro, Lemon Juice, Tomato",
               "allergens": []
             },
             {
-              "title": "WOK FRIED Broccoli",
-              "description": "Broccoli, garlic, salt, pepper, rice bran oil, ginger",
-              "allergens": []
-            },
-            {
-              "title": "Cilantro",
+              "title": "PAPADAM*",
               "description": "",
               "allergens": []
             },
             {
-              "title": "Turmeric Basmati Rice",
-              "description": "basmati rice, turmeric, cumin seed, black mustard seed, salt, oil",
+              "title": "BASMATI RICE",
+              "description": "rice",
               "allergens": []
             },
             {
-              "title": "BLACK CHANA MASALA",
-              "description": "Black Chickpeas, Rice Bran Oil, Salt, Pepper, Ginger, Garlic, Coriander seeds, Cumin Seeds, Clove, Green Cardamom, Black Cardamom, Fennel seed, Bay Leaf, tomato, paprik, curry powder",
+              "title": "GREEN PAPAYA SALAD",
+              "description": "Cucumbers, Green Papaya, Cilantro, Mint, Tamarind, Lime Juice, Agave, Salt",
               "allergens": []
+            },
+            {
+              "title": "BUTTERNUT SQUASH & CHICKPEAS",
+              "description": "Yogurt, parsley, sugar, Green Bell Pepper, Green Chili, Cumin, Coriander, Ginger, Garlic, Lemon Juice, Butternut Squash, Chickpeas, Rice Bran Oil, Salt, Pepper, Chaat Masala",
+              "allergens": [
+                "Milk"
+              ]
             }
           ],
           "inService": true
@@ -233,146 +192,180 @@
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
-          "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
+          "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
             "Milk",
-            "Fish",
-            "Soy",
             "Wheat",
-            "Egg"
+            "Soy",
+            "Egg",
+            "Fish"
           ],
           "dishes": [
             {
-              "title": "Braised White Beans",
-              "description": "white beans",
-              "allergens": []
-            },
-            {
-              "title": "BROCCOLI SLAW",
-              "description": "Broccoli, caesar dressing, parmesan",
+              "title": "GOAT CHEESE + MARINATED FETA",
+              "description": "goat cheese, marinated feta ( orange juice, lemon zest)",
               "allergens": [
-                "Milk",
-                "Fish"
-              ]
-            },
-            {
-              "title": "BALSAMIC ROASTED ONION",
-              "description": "Red onion, balsamic vinegar, non-GMO rice bran oil, salt, black pepper",
-              "allergens": []
-            },
-            {
-              "title": "ROAST TURKEY",
-              "description": "Turkey, salt, pepper, lemon, rosemary, sage, thyme, garlic",
-              "allergens": []
-            },
-            {
-              "title": "FRIED ONIONS*",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "MInted Tomato Vinaigrette",
-              "description": "Mint, Tomato, Coriander, Red Wine Vinegar, Honey, Rice Bran oil, Olive oil, Honey, Salt, Pepper",
-              "allergens": []
-            },
-            {
-              "title": "TOFU MUCH TO HANDLE",
-              "description": "tofu, romain, balsamic roasted red onion, boccoli slaw, tomato, parmesan",
-              "allergens": [
-                "Milk",
-                "Fish",
-                "Soy"
-              ]
-            },
-            {
-              "title": "BEAN THERE DONE THAT",
-              "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
-              "allergens": [
-                "Wheat",
                 "Milk"
               ]
             },
             {
-              "title": "ROASTED TOFU",
-              "description": "Tofu, Extra Virgin Olive Oil, Herbs",
-              "allergens": []
-            },
-            {
-              "title": "Caesar Dressing",
-              "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
-              "allergens": [
-                "Egg",
-                "Fish",
-                "Milk"
-              ]
-            },
-            {
-              "title": "Blue Cheese",
+              "title": "FLOUR TORTILLA (12\")",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Cucumber",
-              "description": "English Cucumber",
-              "allergens": []
-            },
-            {
-              "title": "Balsamic Dressing",
-              "description": "dijon mustard, balsamic, salt, pepper, olive oil, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "Parmesan",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Thousand Island Dressing",
-              "description": "mayo*, ketchup*, white distilled vinegar, sugar, sweet pickle relish*, yellow onion, salt, pepper",
-              "allergens": []
-            },
-            {
-              "title": "MAMA LIL PEPPER*",
-              "description": "*",
-              "allergens": []
-            },
-            {
-              "title": "PEPPERONCINI",
-              "description": "Pepperoncini",
-              "allergens": []
-            },
-            {
-              "title": "Romaine",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Vegan RANCH DRESSING",
-              "description": "Vegan Mayo, white wine vinegar, parsley, dill, onion powder, garlic, powder, salt, pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Bell Pepper",
-              "description": "Bell Pepper, Extra Virgin Olive Oil, Salt",
-              "allergens": []
-            },
-            {
-              "title": "Croutons",
-              "description": "bread, herbs*, non-GMO rice bran oil, salt, pepper",
               "allergens": [
                 "Wheat"
               ]
             },
             {
-              "title": "Spring Mix",
+              "title": "Sunflower & Pepita Crunch Mix",
+              "description": "olive oil, Salt, Pepper, Coriander",
+              "allergens": []
+            },
+            {
+              "title": "Paneer",
+              "description": "Cilantro, Cumin, Coriander, Salt, Curry Powder, Rice Bran Oil",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Radish",
+              "description": "Radish",
+              "allergens": []
+            },
+            {
+              "title": "Mango",
+              "description": "Mango",
+              "allergens": []
+            },
+            {
+              "title": "CHEDDAR",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Vegan RANCH DRESSING",
+              "description": "Vegan mayo*, Lemon Juice, Onion Powder, Garlic Powder, Chive, Dill, salt, black pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "Cucumber",
+              "description": "Cucumber",
+              "allergens": []
+            },
+            {
+              "title": "PICKLED RED ONION",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Chickpea Me Up Before you Go-Go",
+              "description": "Chickpeas, Thoran, Romaine, Paneer, Spiced Seeds, Indian Yogurt Dressing, mango",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Thoran Slaw",
+              "description": "Green Cabbage, Red Cabbage, Carrot, Curry leaves, Shallot, Serrano Chili, Cumin, Turmeric, Black Mustard Seed, Coconut, Garlic, Salt",
+              "allergens": []
+            },
+            {
+              "title": "PARMESAN",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "TOFU",
+              "description": "Tofu, herbs, oil, salt, pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "GRILLED CHICKEN",
+              "description": "Chicken Breast, Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
+              "allergens": []
+            },
+            {
+              "title": "Steamed Beets",
+              "description": "Beets",
+              "allergens": []
+            },
+            {
+              "title": "CAESAR",
+              "description": "",
+              "allergens": [
+                "Milk",
+                "Egg",
+                "Fish"
+              ]
+            },
+            {
+              "title": "CAULIFLOWER",
+              "description": "kashmiri red chili powder, salt and pepper, curry powder",
+              "allergens": []
+            },
+            {
+              "title": "Indian Spiced Yogurt Dressing",
+              "description": "Yogurt, Honey, Cider Vinegar, Cumin, Coriander, Ginger Powder, Turmeric, Kashmiri Chili Powder, Lemon Juice, Salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "PEPPERONCINI",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "AGAVE-Mint Dressing",
+              "description": "Agave, Lemon Juice, Mint, Rice Bran Oil, Parsley, Serrano Chili (minimal), Salt",
+              "allergens": []
+            },
+            {
+              "title": "Chickpeas",
+              "description": "Chickpeas, Chaat Masala, olive oil, Lemon Juice, Cilantro, mango powder",
+              "allergens": []
+            },
+            {
+              "title": "Can't Beet This Chicken Salad",
+              "description": "Mixed Greens, Beets, Grilled Chicken, Sprouts, cheddar, Agave & Mint Dressing",
+              "allergens": []
+            },
+            {
+              "title": "ROMAINE",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "BALSAMIC",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "MAMA LIL PEPPER*",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Bean Sprouts",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "SPRING MIX",
               "description": "Spring Mix",
               "allergens": []
             },
             {
-              "title": "Tortilla wrap",
-              "description": "Wheat Tortilla Wrap",
+              "title": "CROUTON",
+              "description": "bread, rice bran oil, herbs, salt, pepper",
               "allergens": [
                 "Wheat"
               ]
@@ -380,34 +373,9 @@
             {
               "title": "BOILED EGG",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "PICKLED RED ONIONS",
-              "description": "Red onion, apple cider vinegar, salt, Pickling spice, Sugar",
-              "allergens": []
-            },
-            {
-              "title": "Shredded CARROT",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Monterey Jack",
-              "description": "",
               "allergens": [
-                "Milk"
+                "Egg"
               ]
-            },
-            {
-              "title": "Grape",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "GRILLED CHICKEN",
-              "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
-              "allergens": []
             }
           ],
           "inService": true
@@ -416,26 +384,28 @@
           "id": "sweet-spot",
           "name": "Sweet Spot",
           "tagline": "A little something sweet to finish",
-          "hero": "Dessert of the day",
+          "hero": "Peanut Butter Cookie",
           "heroAllergens": [
             "Egg",
             "Milk",
-            "Wheat"
+            "Wheat",
+            "Peanut"
           ],
           "dishes": [
             {
-              "title": "Sugar Cookie with Honey Glaze and Bee Pollen",
-              "description": "all purpose flour, baking powder, salt, butter, sugar, eggs, vanilla, powdered sugar, honey, milk, bee pollen",
+              "title": "FRUIT",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Peanut Butter Cookie*",
+              "description": "",
               "allergens": [
                 "Egg",
                 "Milk",
-                "Wheat"
+                "Wheat",
+                "Peanut"
               ]
-            },
-            {
-              "title": "HAND FRUIT",
-              "description": "",
-              "allergens": []
             }
           ],
           "inService": true
@@ -444,42 +414,42 @@
     },
     {
       "day": "Tuesday",
-      "date": "May 12, 2026",
+      "date": "Jun 23, 2026",
       "stations": [
         {
           "id": "pure",
           "name": "Pure",
           "tagline": "Clean, vibrant, plant-forward",
-          "hero": "Smoked Chicken",
+          "hero": "Herb Roasted Chicken Breast",
           "heroAllergens": [
             "Soy"
           ],
           "dishes": [
             {
-              "title": "Smoked Tofu",
-              "description": "tofu, wood chips, Rice bran Oil, Salt Pepper",
+              "title": "HERB ROASTED CHICKEN",
+              "description": "chicken breast, kosher salt, black pepper, oil, herbs, garlic",
+              "allergens": []
+            },
+            {
+              "title": "LENTIL",
+              "description": "lentils, salt, lemon juice, herbs",
+              "allergens": []
+            },
+            {
+              "title": "ROASTED CARROTS",
+              "description": "Roasted carrots, olive oil, salt",
+              "allergens": []
+            },
+            {
+              "title": "HERB GRILLED TOFU",
+              "description": "Tofu, Rice bran Oil, Salt, Pepper, herbs",
               "allergens": [
                 "Soy"
               ]
             },
             {
-              "title": "Smoked Chicken",
-              "description": "Chicken breast, wood chips, Salt, Extra Virgin Olive Oil",
-              "allergens": []
-            },
-            {
-              "title": "Broccoli",
-              "description": "Broccoli, salt",
-              "allergens": []
-            },
-            {
               "title": "VEGAN SOUP",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Brown Rice",
-              "description": "rice, oil, salt",
+              "description": "c",
               "allergens": []
             }
           ],
@@ -489,40 +459,68 @@
           "id": "rotating-plate",
           "name": "Rotating Plate",
           "tagline": "A new chef's special every day",
-          "hero": "Kalua Pork",
+          "hero": "Blackened Fish Taco",
           "heroAllergens": [
-            "Wheat",
             "Soy",
-            "Sesame"
+            "Milk",
+            "Fish"
           ],
           "dishes": [
             {
-              "title": "KALUA PORK",
-              "description": "pork shoulder, salt, black pepper, banana leaf",
+              "title": "PICO",
+              "description": "Onion, Tomato, Garlic, Cilantro, Lime, Salt, Chili,",
               "allergens": []
             },
             {
-              "title": "Hawaiian Mac Salad",
-              "description": "macaroni, pineapple, carrot, scallion, rice vinegar, Vegan Mayonnaise, sugar, salt, pepper",
+              "title": "TOFURIZO & POTATO",
+              "description": "Tofu, smoked paprika, chili powder, cayenne, garlic powder, onion powder, salt, black pepper, potato, Non-GMO rice bran oil",
               "allergens": [
-                "Wheat",
                 "Soy"
               ]
             },
             {
-              "title": "Watermelon EDAMAME POKE",
-              "description": "Watermelon, tamari, garlic, scallions, cornstarch, sesame oil, spring mix, brown rice, sesame seeds, Rice wine Vinegar, edamame, salt, black pepper",
+              "title": "CHAYOTE & Lime",
+              "description": "chayote squash, salt, pepper, lime, non-gmo rice bran oil",
+              "allergens": []
+            },
+            {
+              "title": "Spanish Rice",
+              "description": "Onion, Garlic, Tomato Paste, Jalapeno, Coriander, Jasmine Rice, Vegetable stock (Onion, Celery, Carrot, Thyme, Bayleaf, Black Pepper) Rice Bran Oil, Salt Pepper",
+              "allergens": []
+            },
+            {
+              "title": "Lime Crema",
+              "description": "sour cream*, lime juice, salt",
               "allergens": [
-                "Sesame",
-                "Soy"
+                "Milk"
               ]
             },
             {
-              "title": "MIXED VEGETABLE STIR FRY",
-              "description": "onion, mushroom, carrot, garlic, ginger, jalapeno, bean sprouts, cabbage, sesame oil, chili flake",
+              "title": "Blackened Fish",
+              "description": "white fish, blackening seasoning  (salt, sugar, chili powder, garlic powder, onion powder, smoked paprika, oregano, cayenne, black pepper), non-GMO vegetable oil",
               "allergens": [
-                "Sesame"
+                "Fish"
               ]
+            },
+            {
+              "title": "RADISH",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "FLOUR TORTILLA",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Cilantro",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "CORN TORTILLA",
+              "description": "Cooked on flat top or grill",
+              "allergens": []
             }
           ],
           "inService": true
@@ -531,46 +529,45 @@
           "id": "wok-n-tandoor",
           "name": "Wok N' Tandoor",
           "tagline": "Asian wok and Indian tandoor classics",
-          "hero": "Chicken Korma",
+          "hero": "Chicken 555",
           "heroAllergens": [
-            "Tree nuts (cashew)",
-            "Wheat"
+            "Wheat",
+            "Milk"
           ],
           "dishes": [
-            {
-              "title": "Halal CHICKEN KORMA",
-              "description": "Halal marinated chicken (chicken, turmeric, coconut milk, ginger, garlic, garam masala, kashmiri chili powder, salt), non-GMO rice bran oil, cardamom, onion, cashew, coconut milk, bay leaf, clove, cinnamon, chili, coriander, garam masala, kashmiri chili powder, cashews",
-              "allergens": [
-                "Tree nuts (cashew)"
-              ]
-            },
-            {
-              "title": "MASALA ROASTED VEGETABLES",
-              "description": "Broccoli, Squash,  Zucchini, Cumin, Fennel Seeds, Chili, Lemon Juice, Lemon Zest, Salt, Rice Bran Oil",
-              "allergens": []
-            },
-            {
-              "title": "MANGO CHUTNEY",
-              "description": "Mango, Ginger, Red Chili, Salt, Sugar,",
-              "allergens": []
-            },
-            {
-              "title": "BASMATI RICE",
-              "description": "basmati rice, salt",
-              "allergens": []
-            },
-            {
-              "title": "CAULIFLOWER KORMA",
-              "description": "onion, bell pepper, ginger, garlic, turmeric, spices, salt, pepper, cauliflower, non-GMO rice bran oil, cardamom, onion, cashew, coconut milk, bay leaf, clove, cinnamon, chili, coriander, garam masala, kashmiri chili powder, cashews",
-              "allergens": [
-                "Tree nuts (cashew)"
-              ]
-            },
             {
               "title": "Naan",
               "description": "",
               "allergens": [
-                "Wheat"
+                "Wheat",
+                "Milk"
+              ]
+            },
+            {
+              "title": "CABBAGE PONYAI",
+              "description": "Cabbage, Turmeric, Rice Bran Oil, Green Chili, Salt, Curry Leaves, Urad Dal, Black Mustard Seeds, Chana Dal",
+              "allergens": []
+            },
+            {
+              "title": "Coconut Rice",
+              "description": "Jasmine Rice, Coconut Milk, Coconut Cream, Salt, Agave",
+              "allergens": []
+            },
+            {
+              "title": "MANGO cilantro \nCHUTNEY",
+              "description": "Mango, Onion, Ginger, Kashmiri Chili Powder, Sugar, Lemon Juice, Salt",
+              "allergens": []
+            },
+            {
+              "title": "PEPPER POT",
+              "description": "Bell Pepper, Garlic, Ginger, Corinader, Cumin, Garam Masala, Peanut, Cashew, Bell Pepper, Rice Bran Oil, Vegetable Bouillon, Green Chili, Curry leaves, Potato",
+              "allergens": []
+            },
+            {
+              "title": "Halal CHICKEN 555",
+              "description": "Halal Chicken Thigh, Salt, Garlic/Ginger Paste, Coriander, Kashmiri Chili Powder, Cumin, Onion, Chaat Masala, Yogurt, Rice Bran oil",
+              "allergens": [
+                "Milk"
               ]
             }
           ],
@@ -580,52 +577,49 @@
           "id": "hot-hands",
           "name": "Hot Hands",
           "tagline": "Sandwiches, pizzas, and other handhelds",
-          "hero": "Hot Hands - Sandwich",
+          "hero": "Chopped Cheese",
           "heroAllergens": [
-            "Milk",
-            "Wheat"
+            "Egg",
+            "Wheat",
+            "Milk"
           ],
           "dishes": [
             {
-              "title": "Lime Crema",
-              "description": "sour cream*, lime juice, salt",
-              "allergens": [
-                "Milk"
-              ]
+              "title": "HOUSE FRY SAUCE",
+              "description": "Ketchup, Mustard, Hot Sauce, Worcestershire sauce, Pickle juice, Mayonnaise, Black Pepper",
+              "allergens": []
             },
             {
-              "title": "ONION RINGS*",
-              "description": "",
-              "allergens": [
-                "Milk",
-                "Wheat"
-              ]
-            },
-            {
-              "title": "French Fries",
+              "title": "ONION RINGS",
               "description": "",
               "allergens": []
             },
             {
-              "title": "Turkey and Avocado Burrito",
-              "description": "Turkey Breast, Rice bran Oil, Herbs, Salt, Pepper, Flour tortilla, Avocado, Tomato, Lettuce, Chipotle Mayo (Chipotle Peppers, lemon Juice, Vegan Mayonnaise, Garlic, Salt Pepper) Cheddar Cheese",
+              "title": "COLESLAW",
+              "description": "red and green cabbage, white vinegar, agave, mayo, carrots, salt and pepper",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Egg"
               ]
             },
             {
-              "title": "Sweet Potato and Avocado Burrito",
-              "description": "Sweet Potato, Rice bran Oil, Herbs, Salt, Pepper, Flour tortilla, Avocado, Tomato, Lettuce, Chipotle Mayo (Chipotle Peppers, lemon Juice, Vegan Mayonnaise, Garlic, Salt Pepper) Cheddar Cheese",
+              "title": "FRENCH FRIES",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "CHOPPED CHEESE",
+              "description": "Ground Beef, Onion, Adobo Seasoning*, Rice Bran Oil, Salt, Pepper, Iceberg Lettuce, Tomato, Hoagie Roll, American Cheese.",
               "allergens": [
                 "Wheat",
                 "Milk"
               ]
             },
             {
-              "title": "Charred Corn Salad",
-              "description": "Corn, Cherry Tomato, Red Onion, Cilantro, Black Beans, Edamame, Parsley, Rice Bran Oil, Salt, Pepper, Lime Juice",
-              "allergens": []
+              "title": "Smoked Mushroom CHOPPED CHEESE",
+              "description": "Mushroom, Onion, Adobo Seasoning*, Rice Bran Oil, Salt, Pepper, Iceberg Lettuce, Tomato, Hoagie Roll, Vegan Cheese Sauce, Mayonnaise, Ketchup",
+              "allergens": [
+                "Wheat"
+              ]
             }
           ],
           "inService": true
@@ -634,178 +628,183 @@
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
-          "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
+          "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
             "Milk",
-            "Egg",
             "Fish",
-            "Soy",
-            "Wheat"
+            "Egg",
+            "Wheat",
+            "Soy"
           ],
           "dishes": [
             {
-              "title": "Caesar Dressing",
-              "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
+              "title": "Chickpea Me Up Before you Go-Go",
+              "description": "Chickpeas, Thoran, Romaine, Paneer, Spiced Seeds, Indian Yogurt Dressing, mango",
               "allergens": [
-                "Milk",
-                "Egg",
-                "Fish"
-              ]
-            },
-            {
-              "title": "Vegan RANCH DRESSING",
-              "description": "Vegan Mayo, white wine vinegar, parsley, dill, onion powder, garlic, powder, salt, pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Blue Cheese",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "BEAN THERE DONE THAT",
-              "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
-              "allergens": [
-                "Wheat",
                 "Milk"
               ]
             },
             {
-              "title": "Romaine",
+              "title": "CAESAR",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "BOILED EGG",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Minted Tomato Vinaigrette",
-              "description": "Mint, Tomato, Coriander, Red Wine Vinegar, Honey, Rice Bran oil, Olive oil, Honey, Salt, Pepper",
               "allergens": [
-                "Soy"
+                "Milk",
+                "Fish",
+                "Egg"
               ]
             },
             {
-              "title": "PICKLED RED ONIONS",
-              "description": "Red onion, apple cider vinegar, salt, Pickling spice, Sugar",
-              "allergens": []
-            },
-            {
-              "title": "Tortilla wrap",
-              "description": "Wheat Tortilla Wrap",
+              "title": "FLOUR TORTILLA (12\")",
+              "description": "",
               "allergens": [
                 "Wheat"
               ]
             },
             {
-              "title": "Thousand Island Dressing",
-              "description": "mayo*, ketchup*, white distilled vinegar, sugar, sweet pickle relish*, yellow onion, salt, pepper",
+              "title": "PEPPERONCINI",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "AGAVE-Mint Dressing",
+              "description": "Agave, Lemon Juice, Mint, Rice Bran Oil, Parsley, Serrano Chili (minimal), Salt",
+              "allergens": []
+            },
+            {
+              "title": "ROMAINE",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Cucumber",
+              "description": "Cucumber",
+              "allergens": []
+            },
+            {
+              "title": "Mango",
+              "description": "Mango",
+              "allergens": []
+            },
+            {
+              "title": "CAULIFLOWER",
+              "description": "kashmiri red chili powder, chana masala, salt and pepper, curry powder",
+              "allergens": []
+            },
+            {
+              "title": "Indian Spiced Yogurt Dressing",
+              "description": "Yogurt, Honey, Cider Vinegar, Cumin, Coriander, Ginger Powder, Turmeric, Kashmiri Chili Powder, Lemon Juice, Salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Sunflower & Pepita Crunch Mix",
+              "description": "olive oil, Salt, Pepper, Coriander",
+              "allergens": []
+            },
+            {
+              "title": "Steamed Beets",
+              "description": "Beets",
+              "allergens": []
+            },
+            {
+              "title": "Radish",
+              "description": "Radish",
+              "allergens": []
+            },
+            {
+              "title": "Bean Sprouts",
+              "description": "",
               "allergens": []
             },
             {
               "title": "GRILLED CHICKEN",
-              "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
+              "description": "Chicken Breast, Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
               "allergens": []
             },
             {
-              "title": "Bell Pepper",
-              "description": "Bell Pepper, Extra Virgin Olive Oil, Salt",
-              "allergens": []
-            },
-            {
-              "title": "Spring Mix",
-              "description": "Spring Mix",
-              "allergens": []
-            },
-            {
-              "title": "TOFU MUCH TO HANDLE",
-              "description": "",
+              "title": "CROUTON",
+              "description": "bread, rice bran oil, herbs, salt, pepper",
               "allergens": [
-                "Soy"
+                "Wheat"
               ]
             },
             {
-              "title": "Grape",
+              "title": "Chickpeas",
+              "description": "Chickpeas, Chaat Masala, olive oil, Lemon Juice, Cilantro",
+              "allergens": []
+            },
+            {
+              "title": "Thoran Slaw",
+              "description": "Green Cabbage, Red Cabbage, Carrot, Curry leaves, Shallot, Serrano Chili, Cumin, Turmeric, Black Mustard Seed, Coconut, Garlic, Salt",
+              "allergens": []
+            },
+            {
+              "title": "BALSAMIC",
               "description": "",
               "allergens": []
             },
             {
               "title": "MAMA LIL PEPPER*",
-              "description": "*",
+              "description": "",
               "allergens": []
             },
             {
-              "title": "Monterey Jack",
+              "title": "PARMESAN",
               "description": "",
               "allergens": [
                 "Milk"
               ]
             },
             {
-              "title": "Braised White Beans",
-              "description": "white beans",
-              "allergens": []
-            },
-            {
-              "title": "Balsamic Dressing",
-              "description": "dijon mustard, balsamic, salt, pepper, olive oil, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "Croutons",
-              "description": "bread, herbs*, non-GMO rice bran oil, salt, pepper",
+              "title": "Paneer",
+              "description": "Cilantro, Cumin, Coriander, Black Salt, Curry Powder, Rice Bran Oil",
               "allergens": [
-                "Wheat"
+                "Milk"
               ]
             },
             {
-              "title": "ROAST TURKEY",
-              "description": "Turkey, salt, pepper, lemon, rosemary, sage, thyme, garlic",
-              "allergens": []
+              "title": "WHITE CHEDDAR",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
             },
             {
-              "title": "Parmesan",
+              "title": "BOILED EGG",
+              "description": "",
+              "allergens": [
+                "Egg"
+              ]
+            },
+            {
+              "title": "PICKLED RED ONION",
               "description": "",
               "allergens": []
             },
             {
-              "title": "BROCCOLI SLAW",
-              "description": "Broccoli",
+              "title": "Can't Beet This Chicken Salad",
+              "description": "Mixed Greens, Beets, Grilled Chicken, Sprouts, cheddar, Agave & Mint Dressing",
               "allergens": []
             },
             {
-              "title": "ROASTED TOFU",
-              "description": "Tofu, Extra Virgin Olive Oil, Herbs",
+              "title": "TOFU",
+              "description": "Tofu, herbs, oil, salt, pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "SPRING MIX",
+              "description": "Spring Mix",
               "allergens": []
             },
             {
-              "title": "Cucumber",
-              "description": "English Cucumber",
-              "allergens": []
-            },
-            {
-              "title": "BALSAMIC ROASTED ONION",
-              "description": "Red onion, balsamic vinegar, non-GMO rice bran oil, salt, black pepper",
-              "allergens": []
-            },
-            {
-              "title": "FRIED ONIONS*",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "PEPPERONCINI",
-              "description": "Pepperoncini",
-              "allergens": []
-            },
-            {
-              "title": "Shredded CARROT",
-              "description": "",
-              "allergens": []
+              "title": "Vegan RANCH DRESSING",
+              "description": "Vegan mayo*, Lemon Juice, Onion Powder, Garlic Powder, Chive, Dill, salt, black pepper",
+              "allergens": [
+                "Soy"
+              ]
             }
           ],
           "inService": true
@@ -814,7 +813,7 @@
           "id": "sweet-spot",
           "name": "Sweet Spot",
           "tagline": "A little something sweet to finish",
-          "hero": "Dessert of the day",
+          "hero": "Brookie",
           "heroAllergens": [
             "Egg",
             "Milk",
@@ -822,12 +821,12 @@
           ],
           "dishes": [
             {
-              "title": "HAND FRUIT",
+              "title": "FRUIT",
               "description": "",
               "allergens": []
             },
             {
-              "title": "Dessert of the day",
+              "title": "Brookie",
               "description": "",
               "allergens": [
                 "Egg",
@@ -842,42 +841,38 @@
     },
     {
       "day": "Wednesday",
-      "date": "May 13, 2026",
+      "date": "Jun 24, 2026",
       "stations": [
         {
           "id": "pure",
           "name": "Pure",
           "tagline": "Clean, vibrant, plant-forward",
-          "hero": "Herb Roasted Chicken",
-          "heroAllergens": [
-            "Wheat"
-          ],
+          "hero": "Indian Spiced Grilled Chicken",
+          "heroAllergens": [],
           "dishes": [
-            {
-              "title": "Roasted Peppers",
-              "description": "Bell peppers, Garlic, Extra Virgin Olive oil, Lemon Juice, Salt, Parsley",
-              "allergens": []
-            },
-            {
-              "title": "Roasted Tofu",
-              "description": "Tofu, Herbs, Extra Virgin Olive Oil, Salt",
-              "allergens": []
-            },
             {
               "title": "VEGAN SOUP",
               "description": "",
               "allergens": []
             },
             {
-              "title": "Linguini with Pistou",
-              "description": "Linguini Pasta, Mint, Parsley, lemon Juice, Lemon Zest, Sunflower seeds, Extra Virgin Olive oil, Salt, Pepper",
-              "allergens": [
-                "Wheat"
-              ]
+              "title": "HARRISA SPICED CAULIFLOWER",
+              "description": "Cauliflower, Rice Bran Oil, Harissa Spice, Cilantro, Lemon Juice, Salt",
+              "allergens": []
             },
             {
-              "title": "Herb Roasted Chicken Breast",
-              "description": "Chicken breast, Salt, Extra Virgin Olive Oil, herbs",
+              "title": "FARRO",
+              "description": "Farro, Vegetable Stock, Salt, Herbs, Olive Oil, Lemon Juice",
+              "allergens": []
+            },
+            {
+              "title": "INDIAN SPICED GRILLED CHICKEN",
+              "description": "Chicken Breast, Turmeric, Coriander, Cumin, Paprika, Garam Masala, Rice Bran Oil, Salt, Lemon Juice.",
+              "allergens": []
+            },
+            {
+              "title": "BROCCOLI STEAKS",
+              "description": "broccoli, olive oil, salt",
               "allergens": []
             }
           ],
@@ -887,36 +882,48 @@
           "id": "rotating-plate",
           "name": "Rotating Plate",
           "tagline": "A new chef's special every day",
-          "hero": "Coffee & Chili Crusted Steak",
+          "hero": "Pomegranate & Zaatar Glazed Pork Ribs",
           "heroAllergens": [
+            "Sesame",
+            "Milk",
             "Wheat"
           ],
           "dishes": [
             {
-              "title": "Garlic MASHED POTATOES",
-              "description": "Yukon Gold potatoes, Garlic, Milk, Butter, salt, White pepper",
+              "title": "YELLOW BEET & POTATO SALAD",
+              "description": "Beet, potato, Celery, Lemon Juice, Olive Oil, Salt, Pepper, Parsley, Dill, Sumac, Red Onion, Garlic",
               "allergens": []
             },
             {
-              "title": "Roasted Asparagus",
-              "description": "Asparagus, Garlic, Lemon Rice Bran Oil, Salt",
-              "allergens": []
-            },
-            {
-              "title": "Stuffed Portabella Mushrooms",
-              "description": "Portabella mushrooms, Onion, Garlic, Celery, Parsley, Thyme, Rosemary, Panko Bread Crumbs, vegan Butter, Salt, Pepper",
+              "title": "POMEGRANATE & ZAATAR GLAZED TOFU STEAKS",
+              "description": "Tofu, Cumin, Coriander, Onion Powder, Garlic Powder, Zaatar, Pomegranate molasses, Onion, Garlic, Diced Tomato, Brown Sugar, Molasses, Ketchup, Mustard, Salt, Pepper",
               "allergens": [
+                "Sesame"
+              ]
+            },
+            {
+              "title": "POMEGRANATE & ZAATAR GLAZED PORK RIBS",
+              "description": "Pork Ribs, Cumin, Coriander, Onion Powder, Garlic Powder, Zaatar, Pomegranate molasses, Onion, Garlic, Diced Tomato, Brown Sugar, Molasses, Ketchup, Mustard, Salt, Pepper",
+              "allergens": [
+                "Sesame"
+              ]
+            },
+            {
+              "title": "EGYPTIAN MAC & CHEESE",
+              "description": "Elbow Pasta, Milk, Flour, Butter, Cheddar Cheese, Urfa Bieber Chili, Salt, Pepper",
+              "allergens": [
+                "Milk",
                 "Wheat"
               ]
             },
             {
-              "title": "COFFEE & CHILI CRUSTED STEAK",
-              "description": "steak, ancho chili powder, ground coffee, cayenne, garlic powder, cumin, salt",
+              "title": "MEDITERANEAN RICE",
+              "description": "Jasmine Rice, Turmeric, Golden Raisin, Kidney Beans, Bay Leaf, Cinnamon, Salt, Vegetable Stock, Rice Bran Oil, Parsley.",
               "allergens": []
             },
             {
-              "title": "Maple Chili Gastrique",
-              "description": "Sugar, Water, Maple syrup. Gochugaru, Red Wine Vinegar, Bay Leaves, Coriander seeds, Fennel seeds, Salt",
+              "title": "POMEGRANATE BBQ SAUCE",
+              "description": "Cumin, Coriander, Onion Powder, Garlic Powder, Zaatar, Pomegranate molasses, Onion, Garlic, Diced Tomato, Brown Sugar, Molasses, Ketchup, Mustard, Salt, Pepper",
               "allergens": []
             }
           ],
@@ -926,57 +933,59 @@
           "id": "wok-n-tandoor",
           "name": "Wok N' Tandoor",
           "tagline": "Asian wok and Indian tandoor classics",
-          "hero": "fish curry",
+          "hero": "Nam Jim Jaew (Thai Grilled Flank Steak)",
           "heroAllergens": [
-            "Milk",
-            "Egg",
-            "Wheat",
-            "Fish"
+            "Soy",
+            "Fish",
+            "Peanut"
           ],
           "dishes": [
             {
-              "title": "Fish Curry",
-              "description": "cumin powder, coriander powder, salt, black pepper, garam masala, cream, curry powder, tomatoes, kasuri methi",
+              "title": "Scallion",
+              "description": "Scallion",
+              "allergens": []
+            },
+            {
+              "title": "NAM JIM JAEW SAUCE",
+              "description": "Toasted Rice Powder, Shallot, Cilantro, Scallion, Vegan Fish Sauce, Sugar, Lime, Fresno",
               "allergens": [
-                "Milk"
+                "Soy"
               ]
             },
             {
-              "title": "Naan",
+              "title": "MINT",
               "description": "",
-              "allergens": [
-                "Egg",
-                "Milk",
-                "Wheat"
-              ]
-            },
-            {
-              "title": "ALOO MUSHROOM Masala",
-              "description": "Ginger, Garlic, Rice Bran Oil, Salt, Black pepper, Coriander, Cardamom, Button Mushroom, Tomato, Red Chili Powder, Coriander, Turmeric, Raisin, Green Chili",
               "allergens": []
             },
             {
-              "title": "Cucumber Raita",
-              "description": "yogurt*, cucumber, chaat masala, cumin, salt",
-              "allergens": [
-                "Milk"
-              ]
-            },
-            {
-              "title": "THORAN STYLE SALAD",
-              "description": "black mustard, cumin seeds, shallots, onion, garlic, chilli, curry leaves, tumeric, coconut, salt, red cabbage, carrot",
-              "allergens": []
-            },
-            {
-              "title": "BASMATI RICE",
-              "description": "basmati rice, salt",
-              "allergens": []
-            },
-            {
-              "title": "TILAPIA",
-              "description": "tilapia, ginger, garlic, salt, black pepper, cilantro, rice bran oil",
+              "title": "THAI FLANK STEAK",
+              "description": "Garlic, Ginger, Chili, Rice Bran Oil, Fish Sauce, Lime Juice",
               "allergens": [
                 "Fish"
+              ]
+            },
+            {
+              "title": "THAI RED RICE",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Fried Shallots",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Chopped Peanuts*",
+              "description": "",
+              "allergens": [
+                "Peanut"
+              ]
+            },
+            {
+              "title": "THAI ROASTED TOFU",
+              "description": "Garlic, Ginger, Chili, Rice Bran Oil, Vegan Fish Sauce, Lime Juice",
+              "allergens": [
+                "Soy"
               ]
             }
           ],
@@ -986,18 +995,26 @@
           "id": "hot-hands",
           "name": "Hot Hands",
           "tagline": "Sandwiches, pizzas, and other handhelds",
-          "hero": "Hot Hands - Pizza",
+          "hero": "Sausage, Onion, Pepper, and Arrabiata Pizza",
           "heroAllergens": [
             "Milk",
             "Wheat"
           ],
           "dishes": [
             {
-              "title": "PEPPERONI PIZZA",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Mozzarella Cheese, Pepperoni",
+              "title": "Roasted Squash, garlic confit, & Arugula Pizza",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) squash, garlic, arugula",
               "allergens": [
                 "Milk",
                 "Wheat"
+              ]
+            },
+            {
+              "title": "Sausage, Onion, Pepper, and Arrabiata Sauce PIZZA",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Sausage, onion, bell pepper",
+              "allergens": [
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -1006,19 +1023,11 @@
               "allergens": []
             },
             {
-              "title": "Chicken Parmesan Pizza",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Chicken Breast, Bread Crumb, Egg, Parsley, Burrata Cheese",
+              "title": "PEPPERONI PIZZA",
+              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Mozzarella Cheese, Pepperoni",
               "allergens": [
-                "Milk",
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Classic Margherita",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper)",
-              "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             }
           ],
@@ -1028,168 +1037,113 @@
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
-          "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
+          "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
-            "Wheat",
             "Milk",
-            "Soy",
             "Egg",
-            "Fish"
+            "Fish",
+            "Wheat",
+            "Soy"
           ],
           "dishes": [
             {
-              "title": "GRILLED CHICKEN",
-              "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
-              "allergens": []
-            },
-            {
-              "title": "Braised White Beans",
-              "description": "white beans",
-              "allergens": []
-            },
-            {
-              "title": "BALSAMIC ROASTED ONION",
-              "description": "Red onion, balsamic vinegar, non-GMO rice bran oil, salt, black pepper",
+              "title": "Steamed Beets",
+              "description": "Beets",
               "allergens": []
             },
             {
               "title": "PEPPERONCINI",
-              "description": "Pepperoncini",
-              "allergens": []
-            },
-            {
-              "title": "Cucumber",
-              "description": "English Cucumber",
-              "allergens": []
-            },
-            {
-              "title": "ROASTED TOFU",
-              "description": "Tofu, Extra Virgin Olive Oil, Herbs",
-              "allergens": []
-            },
-            {
-              "title": "FRIED ONIONS*",
               "description": "",
               "allergens": []
             },
             {
-              "title": "BROCCOLI SLAW",
-              "description": "Broccoli",
+              "title": "Indian Spiced Yogurt Dressing",
+              "description": "Yogurt, Honey, Cider Vinegar, Cumin, Coriander, Ginger Powder, Turmeric, Kashmiri Chili Powder, Lemon Juice, Salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "GRILLED CHICKEN",
+              "description": "Chicken Breast, Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
               "allergens": []
             },
             {
-              "title": "Croutons",
-              "description": "bread, herbs*, non-GMO rice bran oil, salt, pepper",
-              "allergens": [
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Tortilla wrap",
-              "description": "Wheat Tortilla Wrap",
-              "allergens": [
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Monterey Jack",
+              "title": "PARMESAN",
               "description": "",
               "allergens": [
                 "Milk"
               ]
             },
             {
-              "title": "Vegan RANCH DRESSING",
-              "description": "Vegan Mayo, white wine vinegar, parsley, dill, onion powder, garlic, powder, salt, pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Parmesan",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Balsamic Dressing",
-              "description": "dijon mustard, balsamic, salt, pepper, olive oil, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "MInted Tomato Vinaigrette",
-              "description": "Mint, Tomato, Coriander, Red Wine Vinegar, Honey, Rice Bran oil, Olive oil, Honey, Salt, Pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Grape",
-              "description": "",
+              "title": "Can't Beet This Chicken Salad",
+              "description": "Mixed Greens, Beets, Grilled Chicken, Sprouts, cheddar, Agave & Mint Dressing",
               "allergens": []
             },
             {
               "title": "BOILED EGG",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Spring Mix",
-              "description": "Spring Mix",
-              "allergens": []
-            },
-            {
-              "title": "PICKLED RED ONIONS",
-              "description": "Red onion, apple cider vinegar, salt, Pickling spice, Sugar",
-              "allergens": []
-            },
-            {
-              "title": "MAMA LIL PEPPER*",
-              "description": "*",
-              "allergens": []
-            },
-            {
-              "title": "BEAN THERE DONE THAT",
-              "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Egg"
               ]
             },
             {
-              "title": "Shredded CARROT",
+              "title": "Bean Sprouts",
               "description": "",
               "allergens": []
             },
             {
-              "title": "TOFU MUCH TO HANDLE",
-              "description": "",
+              "title": "Radish",
+              "description": "Radish",
+              "allergens": []
+            },
+            {
+              "title": "Chickpea Me Up Before you Go-Go",
+              "description": "Chickpeas, Thoran, Romaine, Paneer, Spiced Seeds, Indian Yogurt Dressing, mango",
               "allergens": [
-                "Soy"
+                "Milk"
               ]
             },
             {
-              "title": "Blue Cheese",
+              "title": "PICKLED RED ONION",
               "description": "",
               "allergens": []
             },
             {
-              "title": "Thousand Island Dressing",
-              "description": "mayo*, ketchup*, white distilled vinegar, sugar, sweet pickle relish*, yellow onion, salt, pepper",
+              "title": "Chickpeas",
+              "description": "Chickpeas, Chaat Masala, olive oil, Lemon Juice, Cilantro",
               "allergens": []
             },
             {
-              "title": "Bell Pepper",
-              "description": "Bell Pepper, Extra Virgin Olive Oil, Salt",
+              "title": "Cucumber",
+              "description": "Cucumber",
               "allergens": []
             },
             {
-              "title": "ROAST TURKEY",
-              "description": "Turkey, salt, pepper, lemon, rosemary, sage, thyme, garlic",
+              "title": "CAULIFLOWER",
+              "description": "kashmiri red chili powder, chana masala, salt and pepper, curry powder",
               "allergens": []
             },
             {
-              "title": "Caesar Dressing",
-              "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
+              "title": "Thoran Slaw",
+              "description": "Green Cabbage, Red Cabbage, Carrot, Curry leaves, Shallot, Serrano Chili, Cumin, Turmeric, Black Mustard Seed, Coconut, Garlic, Salt",
+              "allergens": []
+            },
+            {
+              "title": "WHITE CHEDDAR",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "BALSAMIC",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "CAESAR",
+              "description": "",
               "allergens": [
                 "Milk",
                 "Egg",
@@ -1197,9 +1151,69 @@
               ]
             },
             {
-              "title": "Romaine",
+              "title": "Mango",
+              "description": "Mango",
+              "allergens": []
+            },
+            {
+              "title": "ROMAINE",
               "description": "",
               "allergens": []
+            },
+            {
+              "title": "AGAVE-Mint Dressing",
+              "description": "Agave, Lemon Juice, Mint, Rice Bran Oil, Parsley, Serrano Chili (minimal), Salt",
+              "allergens": []
+            },
+            {
+              "title": "FLOUR TORTILLA (12\")",
+              "description": "",
+              "allergens": [
+                "Wheat"
+              ]
+            },
+            {
+              "title": "Vegan RANCH DRESSING",
+              "description": "Vegan mayo*, Lemon Juice, Onion Powder, Garlic Powder, Chive, Dill, salt, black pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "CROUTON",
+              "description": "bread, rice bran oil, herbs, salt, pepper",
+              "allergens": [
+                "Wheat"
+              ]
+            },
+            {
+              "title": "SPRING MIX",
+              "description": "Spring Mix",
+              "allergens": []
+            },
+            {
+              "title": "MAMA LIL PEPPER*",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Paneer",
+              "description": "Cilantro, Cumin, Coriander, Black Salt, Curry Powder, Rice Bran Oil",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Sunflower & Pepita Crunch Mix",
+              "description": "olive oil, Salt, Pepper, Coriander",
+              "allergens": []
+            },
+            {
+              "title": "TOFU",
+              "description": "Tofu, herbs, oil, salt, pepper",
+              "allergens": [
+                "Soy"
+              ]
             }
           ],
           "inService": true
@@ -1208,7 +1222,7 @@
           "id": "sweet-spot",
           "name": "Sweet Spot",
           "tagline": "A little something sweet to finish",
-          "hero": "Dessert of the day",
+          "hero": "Sweet Eat - Brownies",
           "heroAllergens": [
             "Egg",
             "Milk",
@@ -1216,8 +1230,8 @@
           ],
           "dishes": [
             {
-              "title": "Dessert of the day",
-              "description": "",
+              "title": "DOUBLE CHOCOLATE BROWNIES",
+              "description": "flour, egg, butter, chocolate, baking powder, chocolate, white chocolate chips",
               "allergens": [
                 "Egg",
                 "Milk",
@@ -1225,7 +1239,7 @@
               ]
             },
             {
-              "title": "HAND FRUIT",
+              "title": "FRUIT",
               "description": "",
               "allergens": []
             }
@@ -1236,46 +1250,51 @@
     },
     {
       "day": "Thursday",
-      "date": "May 14, 2026",
+      "date": "Jun 25, 2026",
       "stations": [
         {
           "id": "pure",
           "name": "Pure",
           "tagline": "Clean, vibrant, plant-forward",
-          "hero": "Roasted Shrimp",
+          "hero": "Mahi Mahi with Pineapple Salsa",
           "heroAllergens": [
+            "Soy",
             "Sesame",
-            "Shellfish (shrimp)"
+            "Fish"
           ],
           "dishes": [
             {
-              "title": "Smashed Potatoes",
-              "description": "red potato, non-GMO rice bran oil, onion powder, garlic powder, paprika, salt, pepper",
+              "title": "PINEAPPLE SALSA",
+              "description": "pineapple, red onion, red, bell pepper, Agave, tomato, cilantro, jalapeno, salt, pepper, lime juice, Cumin, Coriander",
               "allergens": []
             },
             {
-              "title": "Miso Roasted Cabbage",
-              "description": "Cabbage, miso paste, salt, pepper, rice bran oil",
+              "title": "SWEET POTATO CRUNCH SALAD",
+              "description": "Sweet Potato, Red Cabbage, Edamame, Mint, Cilantro, Ginger, Lime Juice, Garlic, Agave, Olive OIl, Salt, Pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "SNAP PEA & CUCUMBER SALAD",
+              "description": "Snap Peas, Cucumber, Rice Vinegar, Sesame oil, Sesame seeds, Scallion, Salt",
               "allergens": [
                 "Sesame"
               ]
             },
             {
-              "title": "Butternut Squash",
-              "description": "butternut squash, salt, pepper, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "Roasted Shrimp",
-              "description": "Shrimp, olive oil, lemon juice, salt",
+              "title": "MISO ROASTED CABBAGE STEAKS",
+              "description": "Cabbage, Miso, Olive oil, Lemon Juice, Agave",
               "allergens": [
-                "Shellfish (shrimp)"
+                "Soy"
               ]
             },
             {
-              "title": "VEGAN SOUP",
-              "description": "",
-              "allergens": []
+              "title": "Pan Roasted Wahoo",
+              "description": "Wahoo Fish, Olive oil, Lemon Juice, Salt, Herbs",
+              "allergens": [
+                "Fish"
+              ]
             }
           ],
           "inService": true
@@ -1284,32 +1303,37 @@
           "id": "rotating-plate",
           "name": "Rotating Plate",
           "tagline": "A new chef's special every day",
-          "hero": "chicken marbella",
+          "hero": "Apricot Glazed Chicken",
           "heroAllergens": [
-            "Wheat"
+            "Soy"
           ],
           "dishes": [
             {
-              "title": "Chickpea & Vegetable Tagine",
-              "description": "Onion, Bell Pepper, Zucchini, Garbanzo Beans, Cauliflower(Minimal), Lemon Juice, Sumac, Oregano, Coriander, Vegetable stock, Parsley, Mint, Extra Virgin Olive oil, Rice Bran Oil, Salt, Pepper",
+              "title": "CABBAGE SLAW WITH CITRUS VINAIGRETTE",
+              "description": "Green Cabbage, Red Cabbage, Apple, Carrots, Parsley, Cilantro, Orange Juice, Honey, Salt, Pepper",
               "allergens": []
             },
             {
-              "title": "CHICKEN MARBELLA",
-              "description": "Chicken Thigh, Red Onion, Olive, Dried Apricot, Oregano, Parsley, Garlic, White Wine, Golden, lemon juice, Raisin, Rice Bran Oil, Salt, Pepper, Chicken stock",
+              "title": "Roasted Squash & Tomatoes",
+              "description": "Summer Squash, Zucchini, Grape Tomato, Agave, Pumpkin seeds, Parsley, Rice Bran Oil, Salt, Pepper, Olive oil,, Lemon Juice",
               "allergens": []
             },
             {
-              "title": "Arugula + Spinach Salad",
-              "description": "arugula, spinach, mixed greens, tomato, red onion, Lemon Juice, Oregano, Parsley, Garlic, Rice bran oil, Salt, honey",
+              "title": "TOASTED ORZO SALAD",
+              "description": "Orzo, Rice Bran Oil, Dried Cranberries, Spinach, Sunflower seeds, White Balsamic, Herbs, Extra Virgin Olive Oil",
               "allergens": []
             },
             {
-              "title": "RICE PILAF",
-              "description": "rice, peppers, onions, shallots, garlic, parsley, salt, pepper, olive oil, vegetable stock, orzo pasta",
+              "title": "APRICOT GLAZED TOFU STEAKS",
+              "description": "Tofu, Garlic, Ginger, Apricot Jam, Vegetable Stock, Lemon Juice, Parsley, Cornstarch",
               "allergens": [
-                "Wheat"
+                "Soy"
               ]
+            },
+            {
+              "title": "APRICOT GLAZED CHICKEN",
+              "description": "Chicken Thigh, Garlic, Ginger, Apricot Jam, Vegetable Stock, Lemon Juice, Parsley, Cornstarch, Apricots",
+              "allergens": []
             }
           ],
           "inService": true
@@ -1318,48 +1342,56 @@
           "id": "wok-n-tandoor",
           "name": "Wok N' Tandoor",
           "tagline": "Asian wok and Indian tandoor classics",
-          "hero": "Hakka Chili Chicken",
+          "hero": "Chicken Khao Soi",
           "heroAllergens": [
+            "Egg",
+            "Wheat",
             "Soy"
           ],
           "dishes": [
             {
-              "title": "CHILI GARLIC FRIED RICE",
-              "description": "Bell Pepper, Onion, Carrot, Tamari, Green Chili Sauce, Vinegar, MSG, Salt, Rice Bran Oil",
+              "title": "EGG NOODLES",
+              "description": "egg noodles*, rice bran oil",
               "allergens": [
-                "Soy"
+                "Egg",
+                "Wheat"
               ]
             },
             {
-              "title": "Halal HAKKA CHILI CHICKEN",
-              "description": "Halal Chicken Thigh, Onion, Bell Pepper, Green Chili, Cilantro, Scallion, Tamari, Green Chili Sauce, Red Chili Sauce, Vinegar, White Pepper, Salt, Black Pepper, Rice Bran Oil",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "VEGETABLE MANCHURIAN",
-              "description": "Celery, Cabbage, Carrots, Onion, white pepper, Salt, Blk Pepper, Cornstarch, Rice Flour, Tamari, Green Chili Sauce, Red Chili Sauce, Vinegar",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "CILANTRO MINT CHUTNEY",
+              "title": "CILANTRO",
               "description": "",
               "allergens": []
             },
             {
-              "title": "MUSHROOM CHILI",
-              "description": "Button Mushroom, Tamari, Green Chili Sauce, Red Chili Sauce, Vinegar",
+              "title": "LIMES",
+              "description": "lime",
+              "allergens": []
+            },
+            {
+              "title": "TOFU KHAO SOI",
+              "description": "Tofu, Ginger, Garlic, Bird Chili, Turmeric, Shallot, Black Cardamom, Red Curry Paste*, Coconut Milk, Vegan Fish Sauce, Lime Juice, Tamari, Palm Sugar, Egg Noodles*",
               "allergens": [
-                "Soy"
+                "Soy",
+                "Egg"
               ]
             },
             {
-              "title": "CUCUMBER SALAD",
+              "title": "SHALLOTS",
               "description": "",
               "allergens": []
+            },
+            {
+              "title": "Pickled MUSTARD GREENS",
+              "description": "mustard greens, vinegar, salt, pepper,",
+              "allergens": []
+            },
+            {
+              "title": "CHICKEN KHAO SOI",
+              "description": "Chicken Thigh, Ginger, Garlic, Bird Chili, Turmeric, Shallot, Black Cardamom, Red Curry Paste*, Coconut Milk, Vegan Fish Sauce, Lime Juice, Tamari, Palm Sugar, Egg Noodles*",
+              "allergens": [
+                "Egg",
+                "Soy"
+              ]
             }
           ],
           "inService": true
@@ -1368,40 +1400,32 @@
           "id": "hot-hands",
           "name": "Hot Hands",
           "tagline": "Sandwiches, pizzas, and other handhelds",
-          "hero": "Hot Hands - Pizza",
+          "hero": "Focaccia Sandwich",
           "heroAllergens": [
-            "Wheat",
-            "Milk"
+            "Milk",
+            "Wheat"
           ],
           "dishes": [
             {
-              "title": "Sicilian Pizza with Finnochiona and Fennel Salad  Pizza",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper)",
+              "title": "CAPRESE SANDWICH WITH PISTACHIO PESTO",
+              "description": "",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
-              "title": "PEPPERONI PIZZA",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Mozzarella Cheese, Pepperoni",
+              "title": "CLASSIC ITALIAN ON FOCACCIA",
+              "description": "Focaccia (Flour, Yeast, Olive oil, Water, Sugar) Prosciutto, Capicola, Finochiona Salami, Lettuce, Tomato, Red wine vinegar, Olive Oil, Black Pepper, Pepperoncini Peppers",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
               "title": "CHOPPED SALAD",
-              "description": "Romaine lettuce, cabbage, Radicchio, Garbanzo Bean, Tomato, Cucumber, Pickled Red Onion, Pickling Spice, Pepperoncini Peppers, Red Wine Vinegar, Agave, Garlic, Oregano, Basil, Salt, Black Pepper, Red Pepper Flake, Olive Oil, Rice Bran Oil, Basil, green onion, jalapeno",
+              "description": "romaine lettuce, raddichio, garbanzo beans, tomato, pickled red onion, pepperoncini peppers, red wine vinegar, garlic, oregano, basil, onion powder, salt, black pepper, olive oil",
               "allergens": []
-            },
-            {
-              "title": "Blistered Tomato and Ricotta Pizza",
-              "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) tomatoes, ricotta",
-              "allergens": [
-                "Wheat",
-                "Milk"
-              ]
             }
           ],
           "inService": true
@@ -1410,178 +1434,183 @@
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
-          "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
+          "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
+            "Soy",
             "Wheat",
             "Milk",
-            "Soy",
-            "Fish",
-            "Egg"
+            "Egg",
+            "Fish"
           ],
           "dishes": [
             {
-              "title": "ROASTED TOFU",
-              "description": "Tofu, Extra Virgin Olive Oil, Herbs",
+              "title": "Cucumber",
+              "description": "Cucumber",
               "allergens": []
             },
             {
-              "title": "Grape",
+              "title": "Steamed Beets",
+              "description": "Beets",
+              "allergens": []
+            },
+            {
+              "title": "TOFU",
+              "description": "Tofu, herbs, oil, salt, pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "FLOUR TORTILLA (12\")",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "PEPPERONCINI",
-              "description": "Pepperoncini",
-              "allergens": []
-            },
-            {
-              "title": "Croutons",
-              "description": "bread, herbs*, non-GMO rice bran oil, salt, pepper",
               "allergens": [
                 "Wheat"
               ]
             },
             {
-              "title": "Monterey Jack",
+              "title": "Mango",
+              "description": "Mango",
+              "allergens": []
+            },
+            {
+              "title": "PARMESAN",
               "description": "",
               "allergens": [
                 "Milk"
               ]
-            },
-            {
-              "title": "Thousand Island Dressing",
-              "description": "mayo*, ketchup*, white distilled vinegar, sugar, sweet pickle relish*, yellow onion, salt, pepper",
-              "allergens": []
-            },
-            {
-              "title": "Romaine",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "BROCCOLI SLAW",
-              "description": "Broccoli",
-              "allergens": []
-            },
-            {
-              "title": "FRIED ONIONS*",
-              "description": "",
-              "allergens": []
             },
             {
               "title": "GRILLED CHICKEN",
-              "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
+              "description": "Chicken Breast, Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
               "allergens": []
             },
             {
-              "title": "BEAN THERE DONE THAT",
-              "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
-              "allergens": [
-                "Wheat",
-                "Milk"
-              ]
-            },
-            {
-              "title": "Spring Mix",
+              "title": "SPRING MIX",
               "description": "Spring Mix",
               "allergens": []
             },
             {
-              "title": "Shredded CARROT",
+              "title": "CAULIFLOWER",
+              "description": "kashmiri red chili powder, chana masala, salt and pepper, curry powder",
+              "allergens": []
+            },
+            {
+              "title": "Chickpea Me Up Before you Go-Go",
+              "description": "Chickpeas, Thoran, Romaine, Paneer, Spiced Seeds, Indian Yogurt Dressing, mango",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "PEPPERONCINI",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "BALSAMIC",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "MAMA LIL PEPPER*",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Chickpeas",
+              "description": "Chickpeas, Chaat Masala, olive oil, Lemon Juice, Cilantro",
+              "allergens": []
+            },
+            {
+              "title": "ROMAINE",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "CROUTON",
+              "description": "bread, rice bran oil, herbs, salt, pepper",
+              "allergens": [
+                "Wheat"
+              ]
+            },
+            {
+              "title": "AGAVE-Mint Dressing",
+              "description": "Agave, Lemon Juice, Mint, Rice Bran Oil, Parsley, Serrano Chili (minimal), Salt",
+              "allergens": []
+            },
+            {
+              "title": "Vegan RANCH DRESSING",
+              "description": "Vegan mayo*, Lemon Juice, Onion Powder, Garlic Powder, Chive, Dill, salt, black pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "Bean Sprouts",
               "description": "",
               "allergens": []
             },
             {
               "title": "BOILED EGG",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Vegan RANCH DRESSING",
-              "description": "Vegan Mayo, white wine vinegar, parsley, dill, onion powder, garlic, powder, salt, pepper",
               "allergens": [
-                "Soy"
+                "Egg"
               ]
             },
             {
-              "title": "Blue Cheese",
-              "description": "",
+              "title": "Thoran Slaw",
+              "description": "Green Cabbage, Red Cabbage, Carrot, Curry leaves, Shallot, Serrano Chili, Cumin, Turmeric, Black Mustard Seed, Coconut, Garlic, Salt",
               "allergens": []
             },
             {
-              "title": "Cucumber",
-              "description": "English Cucumber",
+              "title": "Sunflower & Pepita Crunch Mix",
+              "description": "olive oil, Salt, Pepper, Coriander",
               "allergens": []
             },
             {
-              "title": "Tortilla wrap",
-              "description": "Wheat Tortilla Wrap",
+              "title": "Radish",
+              "description": "Radish",
+              "allergens": []
+            },
+            {
+              "title": "Paneer",
+              "description": "Cilantro, Cumin, Coriander, Black Salt, Curry Powder, Rice Bran Oil",
               "allergens": [
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Parmesan",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Braised White Beans",
-              "description": "white beans",
-              "allergens": []
-            },
-            {
-              "title": "BALSAMIC ROASTED ONION",
-              "description": "Red onion, balsamic vinegar, non-GMO rice bran oil, salt, black pepper",
-              "allergens": []
-            },
-            {
-              "title": "ROAST TURKEY",
-              "description": "Turkey, salt, pepper, lemon, rosemary, sage, thyme, garlic",
-              "allergens": []
-            },
-            {
-              "title": "Bell Pepper",
-              "description": "Bell Pepper, Extra Virgin Olive Oil, Salt",
-              "allergens": []
-            },
-            {
-              "title": "Caesar Dressing",
-              "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
-              "allergens": [
-                "Fish",
-                "Egg",
                 "Milk"
               ]
             },
             {
-              "title": "Balsamic Dressing",
-              "description": "dijon mustard, balsamic, salt, pepper, olive oil, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "MAMA LIL PEPPER*",
-              "description": "*",
-              "allergens": []
-            },
-            {
-              "title": "Minted Tomato Vinaigrette",
-              "description": "Mint, Tomato, Coriander, Red Wine Vinegar, Honey, Rice Bran oil, Olive oil, Honey, Salt, Pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "PICKLED RED ONIONS",
-              "description": "Red onion, apple cider vinegar, salt, Pickling spice, Sugar",
-              "allergens": []
-            },
-            {
-              "title": "TOFU MUCH TO HANDLE",
+              "title": "CAESAR",
               "description": "",
               "allergens": [
-                "Soy"
+                "Egg",
+                "Fish",
+                "Milk"
               ]
+            },
+            {
+              "title": "Indian Spiced Yogurt Dressing",
+              "description": "Yogurt, Honey, Cider Vinegar, Cumin, Coriander, Ginger Powder, Turmeric, Kashmiri Chili Powder, Lemon Juice, Salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "WHITE CHEDDAR",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Can't Beet This Chicken Salad",
+              "description": "Mixed Greens, Beets, Grilled Chicken, Sprouts, cheddar, Agave & Mint Dressing",
+              "allergens": []
+            },
+            {
+              "title": "PICKLED RED ONION",
+              "description": "",
+              "allergens": []
             }
           ],
           "inService": true
@@ -1590,7 +1619,7 @@
           "id": "sweet-spot",
           "name": "Sweet Spot",
           "tagline": "A little something sweet to finish",
-          "hero": "Dessert of the day",
+          "hero": "Sweet Eat - Brownies",
           "heroAllergens": [
             "Egg",
             "Milk",
@@ -1598,8 +1627,8 @@
           ],
           "dishes": [
             {
-              "title": "Dessert of the day",
-              "description": "",
+              "title": "DOUBLE CHOCOLATE BROWNIES",
+              "description": "flour, egg, butter, chocolate, baking powder, chocolate, white chocolate chips",
               "allergens": [
                 "Egg",
                 "Milk",
@@ -1607,7 +1636,7 @@
               ]
             },
             {
-              "title": "HAND FRUIT",
+              "title": "FRUIT",
               "description": "",
               "allergens": []
             }
@@ -1618,43 +1647,39 @@
     },
     {
       "day": "Friday",
-      "date": "May 15, 2026",
+      "date": "Jun 26, 2026",
       "stations": [
         {
           "id": "pure",
           "name": "Pure",
           "tagline": "Clean, vibrant, plant-forward",
-          "hero": "Grilled Chicken",
-          "heroAllergens": [
-            "Soy"
-          ],
+          "hero": "Roasted Pork Loin",
+          "heroAllergens": [],
           "dishes": [
             {
-              "title": "Grilled Chicken Breast",
-              "description": "Chicken breast, Salt, Extra Virgin Olive Oil, herbs",
+              "title": "EGGPLANT",
+              "description": "eggplant, rice bran oil, salt",
               "allergens": []
             },
             {
-              "title": "Lentil Salad",
-              "description": "lentils, oil, salt",
+              "title": "ZAATAR SMASHED POTATOES",
+              "description": "Potato, Oat Milk, Vegan Butter, Salt, Zaatar, Parsley",
               "allergens": []
             },
             {
-              "title": "Steamed Carrots",
-              "description": "carrots, salt",
+              "title": "SUMMER SQUASH",
+              "description": "summer squash, salt, garlic, Rice Bran Oil",
+              "allergens": []
+            },
+            {
+              "title": "Roasted Pork Loin",
+              "description": "Pork loin, olive oil, salt, pepper",
               "allergens": []
             },
             {
               "title": "VEGAN SOUP",
               "description": "",
               "allergens": []
-            },
-            {
-              "title": "Sweet Potato Planks",
-              "description": "sweet potatoes, Rice bran Oil, Salt Pepper",
-              "allergens": [
-                "Soy"
-              ]
             }
           ],
           "inService": true
@@ -1663,62 +1688,53 @@
           "id": "rotating-plate",
           "name": "Rotating Plate",
           "tagline": "A new chef's special every day",
-          "hero": "Chicken Paprikash",
+          "hero": "Green Herb Braised Chicken with Artichokes",
           "heroAllergens": [
             "Milk",
-            "Wheat",
             "Egg",
             "Soy"
           ],
           "dishes": [
             {
-              "title": "SOUR CREAM",
-              "description": "",
+              "title": "FARM TO TABLE SALAD",
+              "description": "olives, tomato, radish, bell pepper, cabbage, lettuce, dijon, garlic, oil, champagne vinegar, salt, honey, italian herbs, onion",
+              "allergens": []
+            },
+            {
+              "title": "PAN SEARED PANISSE WITH BLISTERED TOMATO & PESTO",
+              "description": "Chickpea Flour, Vegetable Stock, Olive oil, Salt, Rice Bran Oil, Basil, Parmesan Cheese, Grape Tomato, Sunflower seeds,",
+              "allergens": []
+            },
+            {
+              "title": "AVOCADO GREEN GODDESS",
+              "description": "Avocado, Garlic, Herbs, Lemon Juice, Vegan Mayonnaise, Garlic",
               "allergens": [
                 "Milk"
               ]
             },
             {
-              "title": "SOUR DOUGH ROLLS",
-              "description": "",
+              "title": "ROASTED GARLIC AIOLI",
+              "description": "Garlic, Rice Bran Oil, Salt, Olive Oil, Lemon Juice, Vegan Mayonnaise",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Egg"
               ]
             },
             {
-              "title": "CUCUMBER SALAD",
-              "description": "Striped Cucumber, Dill, Lemon Juice, Salt",
+              "title": "GRILLED ASPARAGUS WITH LEMON GREMOLATA",
+              "description": "Asparagus, Olive Oil, Garlic, Salt. Parsley, Lemon Zest, Orange Zest",
               "allergens": []
             },
             {
-              "title": "Braised CABBAGE",
-              "description": "cabbage, olive oil, salt",
-              "allergens": []
-            },
-            {
-              "title": "EGG NOODLES*",
-              "description": "",
-              "allergens": [
-                "Egg",
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Tofu PAPRIKASH",
-              "description": "",
+              "title": "PAN ROASTED TOFU WITH SALSA VERDE",
+              "description": "Tofu, Olive oil, Lemon Juice, Parsley, Garlic, Caper, Lemon Zest, Salt, Pepper, Rice Bran Oil, Red Onion.",
               "allergens": [
                 "Soy"
               ]
             },
             {
-              "title": "CHICKEN PAPRIKASH",
-              "description": "Chicken Thigh, non-GMO rice bran oil, Paprika, Onion Powder, Garlic Powder, Salt, Pepper, Butter, Onion, Garlic, Flour, Paprika, Crushed Tomatoes, Chicken Drippings, Salt, Pepper, Sour Cream, Egg Noodles, Parsley, Paprika",
-              "allergens": [
-                "Egg",
-                "Wheat",
-                "Milk"
-              ]
+              "title": "GREEN HERBED BRAISED CHICKEN WITH ARTICHOKES",
+              "description": "Chicken thigh- bone in skin on. Parsley, Cilantro, Basil, Garlic, Olive oil, Salt, Pepper, coriander, Green Olives, Rice Bran Oil, Chicken Stock (Onion, Celery, Carrot), Red Onion, Lemon Juice",
+              "allergens": []
             }
           ],
           "inService": true
@@ -1745,176 +1761,181 @@
           "id": "wrap-culture",
           "name": "Wrap Culture",
           "tagline": "Hand-rolled wraps from around the globe",
-          "hero": "Featured Salads:Tofu Much to Handle and Bean There Done That",
+          "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
-            "Soy",
-            "Wheat",
+            "Egg",
             "Milk",
-            "Fish",
-            "Egg"
+            "Wheat",
+            "Soy",
+            "Fish"
           ],
           "dishes": [
             {
-              "title": "TOFU MUCH TO HANDLE",
-              "description": "",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "PEPPERONCINI",
-              "description": "Pepperoncini",
+              "title": "Cucumber",
+              "description": "Cucumber",
               "allergens": []
             },
             {
-              "title": "Bell Pepper",
-              "description": "Bell Pepper, Extra Virgin Olive Oil, Salt",
-              "allergens": []
-            },
-            {
-              "title": "ROAST TURKEY",
-              "description": "Turkey, salt, pepper, lemon, rosemary, sage, thyme, garlic",
-              "allergens": []
-            },
-            {
-              "title": "Spring Mix",
-              "description": "Spring Mix",
-              "allergens": []
-            },
-            {
-              "title": "ROASTED TOFU",
-              "description": "Tofu, Extra Virgin Olive Oil, Herbs",
+              "title": "Sunflower & Pepita Crunch Mix",
+              "description": "olive oil, Salt, Pepper, Coriander",
               "allergens": []
             },
             {
               "title": "BOILED EGG",
               "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Tortilla wrap",
-              "description": "Wheat Tortilla Wrap",
               "allergens": [
-                "Wheat"
-              ]
-            },
-            {
-              "title": "MAMA LIL PEPPER*",
-              "description": "*",
-              "allergens": []
-            },
-            {
-              "title": "BROCCOLI SLAW",
-              "description": "Broccoli",
-              "allergens": []
-            },
-            {
-              "title": "Vegan RANCH DRESSING",
-              "description": "Vegan Mayo, white wine vinegar, parsley, dill, onion powder, garlic, powder, salt, pepper",
-              "allergens": [
-                "Soy"
-              ]
-            },
-            {
-              "title": "Braised White Beans",
-              "description": "white beans",
-              "allergens": []
-            },
-            {
-              "title": "Blue Cheese",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "PICKLED RED ONIONS",
-              "description": "Red onion, apple cider vinegar, salt, Pickling spice, Sugar",
-              "allergens": []
-            },
-            {
-              "title": "BEAN THERE DONE THAT",
-              "description": "Mixed greens + romaine\nWhite beans\nGrilled chicken\nTomato + cucumber + bell pepper\nPickled red onion\nParmesan\nCroutons\nBalsamic dressing",
-              "allergens": [
-                "Wheat",
-                "Milk"
-              ]
-            },
-            {
-              "title": "Balsamic Dressing",
-              "description": "dijon mustard, balsamic, salt, pepper, olive oil, non-gmo rice bran oil",
-              "allergens": []
-            },
-            {
-              "title": "GRILLED CHICKEN",
-              "description": "Chicken Breast, Pomace Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
-              "allergens": []
-            },
-            {
-              "title": "Cucumber",
-              "description": "English Cucumber",
-              "allergens": []
-            },
-            {
-              "title": "Grape",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Croutons",
-              "description": "bread, herbs*, non-GMO rice bran oil, salt, pepper",
-              "allergens": [
-                "Wheat"
-              ]
-            },
-            {
-              "title": "Caesar Dressing",
-              "description": "mayo*, anchovy paste*, garlic, parmesan cheese, lemon juice*, non-GMO vegetable oil, olive oil, salt, black pepper",
-              "allergens": [
-                "Fish",
-                "Milk",
                 "Egg"
               ]
             },
             {
-              "title": "BALSAMIC ROASTED ONION",
-              "description": "Red onion, balsamic vinegar, non-GMO rice bran oil, salt, black pepper",
+              "title": "Paneer",
+              "description": "Cilantro, Cumin, Coriander, Black Salt, Curry Powder, Rice Bran Oil",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Steamed Beets",
+              "description": "Beets",
               "allergens": []
             },
             {
-              "title": "Romaine",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "FRIED ONIONS*",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Monterey Jack",
+              "title": "PARMESAN",
               "description": "",
               "allergens": [
                 "Milk"
               ]
             },
             {
-              "title": "Thousand Island Dressing",
-              "description": "mayo*, ketchup*, white distilled vinegar, sugar, sweet pickle relish*, yellow onion, salt, pepper",
+              "title": "CAULIFLOWER",
+              "description": "kashmiri red chili powder, chana masala, salt and pepper, curry powder",
               "allergens": []
             },
             {
-              "title": "Parmesan",
+              "title": "MAMA LIL PEPPER*",
               "description": "",
               "allergens": []
             },
             {
-              "title": "MInted Tomato Vinaigrette",
-              "description": "Mint, Tomato, Coriander, Red Wine Vinegar, Honey, Rice Bran oil, Olive oil, Honey, Salt, Pepper",
+              "title": "SPRING MIX",
+              "description": "Spring Mix",
+              "allergens": []
+            },
+            {
+              "title": "Bean Sprouts",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "CROUTON",
+              "description": "bread, rice bran oil, herbs, salt, pepper",
+              "allergens": [
+                "Wheat"
+              ]
+            },
+            {
+              "title": "AGAVE-Mint Dressing",
+              "description": "Agave, Lemon Juice, Mint, Rice Bran Oil, Parsley, Serrano Chili (minimal), Salt",
+              "allergens": []
+            },
+            {
+              "title": "Mango",
+              "description": "Mango",
+              "allergens": []
+            },
+            {
+              "title": "Indian Spiced Yogurt Dressing",
+              "description": "Yogurt, Honey, Cider Vinegar, Cumin, Coriander, Ginger Powder, Turmeric, Kashmiri Chili Powder, Lemon Juice, Salt",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "PICKLED RED ONION",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "TOFU",
+              "description": "Tofu, herbs, oil, salt, pepper",
               "allergens": [
                 "Soy"
               ]
             },
             {
-              "title": "Shredded CARROT",
+              "title": "ROMAINE",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "Thoran Slaw",
+              "description": "Green Cabbage, Red Cabbage, Carrot, Curry leaves, Shallot, Serrano Chili, Cumin, Turmeric, Black Mustard Seed, Coconut, Garlic, Salt",
+              "allergens": []
+            },
+            {
+              "title": "Vegan RANCH DRESSING",
+              "description": "Vegan mayo*, Lemon Juice, Onion Powder, Garlic Powder, Chive, Dill, salt, black pepper",
+              "allergens": [
+                "Soy"
+              ]
+            },
+            {
+              "title": "GRILLED CHICKEN",
+              "description": "Chicken Breast, Oil, Garlic, Parsley, Lemon Juice, Bay Leaf",
+              "allergens": []
+            },
+            {
+              "title": "Chickpeas",
+              "description": "Chickpeas, Chaat Masala, olive oil, Lemon Juice, Cilantro",
+              "allergens": []
+            },
+            {
+              "title": "FLOUR TORTILLA (12\")",
+              "description": "",
+              "allergens": [
+                "Wheat"
+              ]
+            },
+            {
+              "title": "CAESAR",
+              "description": "",
+              "allergens": [
+                "Milk",
+                "Egg",
+                "Fish"
+              ]
+            },
+            {
+              "title": "Radish",
+              "description": "Radish",
+              "allergens": []
+            },
+            {
+              "title": "BALSAMIC",
+              "description": "",
+              "allergens": []
+            },
+            {
+              "title": "WHITE CHEDDAR",
+              "description": "",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "Can't Beet This Chicken Salad",
+              "description": "Mixed Greens, Beets, Grilled Chicken, Sprouts, cheddar, Agave & Mint Dressing",
+              "allergens": []
+            },
+            {
+              "title": "Chickpea Me Up Before you Go-Go",
+              "description": "Chickpeas, Thoran, Romaine, Paneer, Spiced Seeds, Indian Yogurt Dressing, mango",
+              "allergens": [
+                "Milk"
+              ]
+            },
+            {
+              "title": "PEPPERONCINI",
               "description": "",
               "allergens": []
             }
@@ -1925,7 +1946,7 @@
           "id": "sweet-spot",
           "name": "Sweet Spot",
           "tagline": "A little something sweet to finish",
-          "hero": "Dessert of the day",
+          "hero": "Sweet Eat - Brownies",
           "heroAllergens": [
             "Egg",
             "Milk",
@@ -1933,18 +1954,18 @@
           ],
           "dishes": [
             {
-              "title": "HAND FRUIT",
-              "description": "",
-              "allergens": []
-            },
-            {
-              "title": "Dessert of the day",
-              "description": "",
+              "title": "DOUBLE CHOCOLATE BROWNIES",
+              "description": "flour, egg, butter, chocolate, baking powder, chocolate, white chocolate chips",
               "allergens": [
                 "Egg",
                 "Milk",
                 "Wheat"
               ]
+            },
+            {
+              "title": "FRUIT",
+              "description": "",
+              "allergens": []
             }
           ],
           "inService": true

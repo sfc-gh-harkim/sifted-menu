@@ -4,16 +4,16 @@ on:
   push:
     branches: [main]
   schedule:
-    # Refresh once a week on Monday morning. 14:17 UTC ≈ 07:17 PDT / 06:17 PST.
-    # GitHub Actions cron jobs are best-effort and occasionally get silently
-    # dropped during cron contention, so we schedule three redundant slots
-    # spread across the morning. The scrape+deploy is idempotent — re-runs
-    # just overwrite the same data/menu.json with the latest scrape — so
-    # extra runs are harmless. The Wednesday slot also catches the rare
-    # case where Sifted publishes the new week late on Monday.
-    - cron: "17 14 * * 1"   # Monday  07:17 PDT
-    - cron: "37 15 * * 1"   # Monday  08:37 PDT
-    - cron: "17 14 * * 3"   # Wednesday 07:17 PDT (catch-up)
+    # GitHub Actions cron is best-effort and often silently drops scheduled
+    # jobs (especially on Mondays). Spread redundant weekday slots at off-
+    # minute marks so at least one run fires each week. The scrape is
+    # idempotent — extra runs just refresh the same week's data.
+    - cron: "17 14 * * 1"   # Mon 07:17 PDT — primary
+    - cron: "37 15 * * 1"   # Mon 08:37 PDT — backup
+    - cron: "23 14 * * 2"   # Tue 07:23 PDT — catch-up if Mon dropped
+    - cron: "17 14 * * 3"   # Wed 07:17 PDT — mid-week refresh
+    - cron: "41 14 * * 4"   # Thu 07:41 PDT — catch-up
+    - cron: "19 15 * * 5"   # Fri 08:19 PDT — end-of-week safety net
   workflow_dispatch:
 
 permissions:
