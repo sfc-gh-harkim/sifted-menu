@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T18:17:54.815Z",
+  "generatedAt": "2026-06-22T18:41:57.898Z",
   "weekLabel": "Week of 22 June",
   "surveyUrl": "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
   "sources": [
@@ -306,9 +306,9 @@
               "title": "CAESAR",
               "description": "",
               "allergens": [
-                "Milk",
                 "Egg",
-                "Fish"
+                "Fish",
+                "Milk"
               ]
             },
             {
@@ -957,8 +957,8 @@
           "hero": "Pomegranate & Zaatar Glazed Pork Ribs",
           "heroAllergens": [
             "Sesame",
-            "Wheat",
-            "Milk"
+            "Milk",
+            "Wheat"
           ],
           "dishes": [
             {
@@ -984,8 +984,8 @@
               "title": "EGYPTIAN MAC & CHEESE",
               "description": "Elbow Pasta, Milk, Flour, Butter, Cheddar Cheese, Urfa Bieber Chili, Salt, Pepper",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
@@ -1486,8 +1486,8 @@
               "title": "CHICKEN KHAO SOI",
               "description": "Chicken Thigh, Ginger, Garlic, Bird Chili, Turmeric, Shallot, Black Cardamom, Red Curry Paste*, Coconut Milk, Vegan Fish Sauce, Lime Juice, Tamari, Palm Sugar, Egg Noodles*",
               "allergens": [
-                "Egg",
-                "Soy"
+                "Soy",
+                "Egg"
               ]
             }
           ],
@@ -1742,11 +1742,29 @@
         }
       ],
       "breakfast": {
-        "inService": false,
+        "inService": true,
         "name": "Hot Hands",
         "tagline": "Breakfast",
-        "hero": "",
-        "dishes": [],
+        "hero": "Creamy Grits with Shrimp",
+        "dishes": [
+          {
+            "title": "CREAMY GRITS, FRIED GREEN TOMATO & PIMENTO AIOLI",
+            "description": "Grits (Vegan Butter, Oat Milk, Grits, Salt, Water) Egg, Rice Bran Oil, Tomato, Pimento Cheese Aioli (Cheddar Cheese, Mayonnaise, Hot Sauce, Worcestershire Sauce, Lemon Juice, Roasted Red pepper) Scallion",
+            "allergens": [
+              "Egg",
+              "Soy"
+            ]
+          },
+          {
+            "title": "CREAMY GRITS, SHRIMP, FRIED EGG & PIMENTO AIOLI",
+            "description": "Grits (Vegan Butter, Oat Milk, Grits, Salt, Water) Egg, Fried Shrimp (Shrimp, Flour, Egg) Rice Bran Oil Tomato, Pimento Cheese Aioli (Cheddar Cheese, Mayonnaise, Hot Sauce, Worcestershire Sauce, Lemon Juice, Roasted Red pepper) Scallion",
+            "allergens": [
+              "Egg",
+              "Milk",
+              "Shellfish (shrimp)"
+            ]
+          }
+        ],
         "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
       }
     },
@@ -2077,11 +2095,32 @@
         }
       ],
       "breakfast": {
-        "inService": false,
+        "inService": true,
         "name": "Hot Hands",
         "tagline": "Breakfast",
-        "hero": "",
-        "dishes": [],
+        "hero": "Dan Dan Noodles",
+        "dishes": [
+          {
+            "title": "DAN DAN NOODLES WITH PORK",
+            "description": "Wheat Noodles, Pork, Chinese Red Chili, Canola Oil, Salt, Shaoxing Wine, Black Vinegar, Chinese Sesame Paste, Ground Peanuts, Sugar, Soy Sauce, Garlic, Sichuan Peppercorn, Pickled Mustard Greens, Scallion, Chili Oil, egg",
+            "allergens": [
+              "Egg",
+              "Sesame",
+              "Soy",
+              "Wheat"
+            ]
+          },
+          {
+            "title": "DAN DAN NOODLES WITH TOFU",
+            "description": "Wheat Noodles, Tofu, Chinese Red Chili, Canola Oil, Salt, Shaoxing Wine, Black Vinegar, Chinese Sesame Paste, Ground Peanut, Sugar, Soy Sauce, Garlic, Sichuan Peppercorn, Pickled Mustard Greens, Scallion, Chili Oil, egg",
+            "allergens": [
+              "Egg",
+              "Sesame",
+              "Soy",
+              "Wheat"
+            ]
+          }
+        ],
         "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
       }
     }

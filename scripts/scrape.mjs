@@ -53,7 +53,11 @@ async function fetchJson(url) {
 function parseMenuDate(dateStr) {
   const d = new Date(dateStr);
   if (Number.isNaN(d.getTime())) return null;
-  return d.toISOString().slice(0, 10);
+  // Format as YYYY-MM-DD in local time — avoid toISOString() UTC drift.
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }
 
 async function getBellevueMarketId() {
@@ -73,6 +77,12 @@ function emptyBreakfast() {
   };
 }
 
+const HOT_BREAKFAST_BRANDS = new Set(["Hot Hands", "Hot Breakfast"]);
+
+function isHotBreakfastBrand(name) {
+  return HOT_BREAKFAST_BRANDS.has(name);
+}
+
 async function fetchHotHandsBreakfast(marketId, isoDate) {
   const url = `${BELLEVUE_MEALS_URL}?id=${encodeURIComponent(marketId)}&date=${encodeURIComponent(isoDate)}`;
   const { data } = await fetchJson(url);
@@ -80,7 +90,7 @@ async function fetchHotHandsBreakfast(marketId, isoDate) {
   for (const item of data ?? []) {
     if (item.serviceLine?.name?.toLowerCase() !== "breakfast") continue;
     for (const menu of item.menus ?? []) {
-      if (menu.brand?.name !== "Hot Hands") continue;
+      if (!isHotBreakfastBrand(menu.brand?.name)) continue;
 
       const dishes = (menu.scheduledElements ?? [])
         .map((el) => ({
