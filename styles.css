@@ -150,59 +150,8 @@ a {
 .breakfast--off {
   opacity: 0.5;
 }
-.breakfast--off .breakfast__name a {
+.breakfast--off .station__name a {
   pointer-events: none;
-}
-.breakfast__head {
-  margin-bottom: 12px;
-}
-.breakfast__label {
-  font-family: var(--text);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0 0 6px;
-}
-.breakfast__name {
-  font-family: var(--display);
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  margin: 0;
-  line-height: 1.15;
-}
-.breakfast__name a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 120ms ease;
-}
-.breakfast__name a:hover {
-  color: var(--accent);
-}
-.breakfast__hero {
-  font-family: var(--display);
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  margin: 0 0 14px;
-  line-height: 1.2;
-}
-.breakfast__dishes {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.breakfast__dishes .dish {
-  justify-content: center;
-}
-.breakfast__empty {
-  font-family: var(--text);
-  color: var(--ink-faint);
-  font-size: 13px;
-  font-style: italic;
-  margin: 0;
 }
 
 /* Single outer wrapper containing all stations */

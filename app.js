@@ -289,38 +289,37 @@ function renderBreakfast(breakfast) {
 
   const sourceUrl = breakfast.sourceUrl;
   const nameInner = sourceUrl
-    ? `<a href="${escape(sourceUrl)}" target="_blank" rel="noopener">${escape(breakfast.name)}</a>`
-    : escape(breakfast.name);
+    ? `<a href="${escape(sourceUrl)}" target="_blank" rel="noopener">Breakfast</a>`
+    : "Breakfast";
+
+  const head = `
+    <header class="station__head">
+      <h3 class="station__name">${nameInner}</h3>
+    </header>
+  `;
 
   if (breakfast.inService === false) {
     return `
       <section class="breakfast breakfast--off" id="breakfast">
-        <header class="breakfast__head">
-          <p class="breakfast__label">Breakfast</p>
-          <h3 class="breakfast__name">${nameInner}</h3>
-        </header>
-        <p class="breakfast__empty">Not in service today</p>
+        ${head}
+        <p class="station__empty">Not in service today</p>
       </section>
     `;
   }
 
-  const hero = breakfast.hero
-    ? `<p class="breakfast__hero">${escape(titleCase(breakfast.hero))}</p>`
-    : "";
-  const dishes =
-    breakfast.dishes && breakfast.dishes.length
-      ? `<ul class="breakfast__dishes">${breakfast.dishes
-          .map((d) => renderDish(d, { showTags: true }))
-          .join("")}</ul>`
-      : `<p class="breakfast__empty">Menu coming soon.</p>`;
+  const orderedDishes = reorderDishes({
+    hero: breakfast.hero,
+    dishes: breakfast.dishes || [],
+  });
+  const dishes = orderedDishes.length
+    ? `<ul class="dishes">${orderedDishes
+        .map((d) => renderDish(d, { showTags: true }))
+        .join("")}</ul>`
+    : `<p class="station__empty">Menu coming soon.</p>`;
 
   return `
     <section class="breakfast" id="breakfast">
-      <header class="breakfast__head">
-        <p class="breakfast__label">Breakfast</p>
-        <h3 class="breakfast__name">${nameInner}</h3>
-      </header>
-      ${hero}
+      ${head}
       ${dishes}
     </section>
   `;
