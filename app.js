@@ -298,7 +298,7 @@ function renderBreakfast(breakfast) {
     return `
       <section class="menu-section menu-section--breakfast breakfast--off" id="breakfast">
         ${title}
-        <p class="station__empty">Not in service today</p>
+        <p class="station__empty">No data available</p>
       </section>
     `;
   }
