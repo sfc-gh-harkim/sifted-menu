@@ -288,20 +288,16 @@ function renderBreakfast(breakfast) {
   if (!breakfast) return "";
 
   const sourceUrl = breakfast.sourceUrl;
-  const nameInner = sourceUrl
+  const titleInner = sourceUrl
     ? `<a href="${escape(sourceUrl)}" target="_blank" rel="noopener">Breakfast</a>`
     : "Breakfast";
 
-  const head = `
-    <header class="station__head">
-      <h3 class="station__name">${nameInner}</h3>
-    </header>
-  `;
+  const title = `<h2 class="menu-section__title">${titleInner}</h2>`;
 
   if (breakfast.inService === false) {
     return `
-      <section class="breakfast breakfast--off" id="breakfast">
-        ${head}
+      <section class="menu-section menu-section--breakfast breakfast--off" id="breakfast">
+        ${title}
         <p class="station__empty">Not in service today</p>
       </section>
     `;
@@ -318,8 +314,8 @@ function renderBreakfast(breakfast) {
     : `<p class="station__empty">Menu coming soon.</p>`;
 
   return `
-    <section class="breakfast" id="breakfast">
-      ${head}
+    <section class="menu-section menu-section--breakfast" id="breakfast">
+      ${title}
       ${dishes}
     </section>
   `;
@@ -344,7 +340,11 @@ function renderDay(day, sourcesById) {
   return `
     <div class="stations-card">
       ${renderBreakfast(day.breakfast)}
-      <div class="stations-grid">${stations}</div>
+      <hr class="menu-divider" />
+      <section class="menu-section menu-section--lunch">
+        <h2 class="menu-section__title">Lunch</h2>
+        <div class="stations-grid">${stations}</div>
+      </section>
     </div>
   `;
 }
