@@ -292,12 +292,17 @@ function renderBreakfast(breakfast) {
     ? `<a href="${escape(sourceUrl)}" target="_blank" rel="noopener">Breakfast</a>`
     : "Breakfast";
 
-  const title = `<h2 class="menu-section__title">${titleInner}</h2>`;
+  const head = `
+    <header class="station__head">
+      <h2 class="menu-section__title">${titleInner}</h2>
+      <p class="station__tagline">Continental breakfast also available</p>
+    </header>
+  `;
 
   if (breakfast.inService === false) {
     return `
       <section class="menu-section menu-section--breakfast breakfast--off" id="breakfast">
-        ${title}
+        ${head}
         <p class="station__empty">No data available</p>
       </section>
     `;
@@ -315,7 +320,7 @@ function renderBreakfast(breakfast) {
 
   return `
     <section class="menu-section menu-section--breakfast" id="breakfast">
-      ${title}
+      ${head}
       ${dishes}
     </section>
   `;
