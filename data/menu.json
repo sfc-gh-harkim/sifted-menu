@@ -1,8 +1,13 @@
 {
-  "generatedAt": "2026-06-22T18:02:14.365Z",
+  "generatedAt": "2026-06-22T18:17:54.815Z",
   "weekLabel": "Week of 22 June",
   "surveyUrl": "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
   "sources": [
+    {
+      "id": "breakfast",
+      "name": "Hot Hands Breakfast",
+      "url": "https://snowflake.sifted.co/bellevue/meals"
+    },
     {
       "id": "pure",
       "name": "Pure",
@@ -410,7 +415,40 @@
           ],
           "inService": true
         }
-      ]
+      ],
+      "breakfast": {
+        "inService": true,
+        "name": "Hot Hands",
+        "tagline": "Breakfast",
+        "hero": "Avocado & Edamame Toast",
+        "dishes": [
+          {
+            "title": "AVOCADO & EDAMAME TOAST",
+            "description": "gluten free bread, edamame, avocado, lime, salt, black pepper, garlic, red onion, Tomato, Pomegranate Molasses",
+            "allergens": [
+              "Egg",
+              "Soy"
+            ]
+          },
+          {
+            "title": "SOFT BOILED EGG",
+            "description": "",
+            "allergens": [
+              "Egg"
+            ]
+          },
+          {
+            "title": "AVOCADO & EDAMAME & Goat Cheese TOAST",
+            "description": "Bread, edamame, avocado, lime, salt, black pepper, garlic, red onion, Goat Cheese, Tomato, Pomegranate Molasses",
+            "allergens": [
+              "Milk",
+              "Soy",
+              "Wheat"
+            ]
+          }
+        ],
+        "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
+      }
     },
     {
       "day": "Tuesday",
@@ -631,8 +669,8 @@
           "hero": "Chickpea Me Up Before you Go-Go + Can't Beet This Chicken Salad",
           "heroAllergens": [
             "Milk",
-            "Fish",
             "Egg",
+            "Fish",
             "Wheat",
             "Soy"
           ],
@@ -649,8 +687,8 @@
               "description": "",
               "allergens": [
                 "Milk",
-                "Fish",
-                "Egg"
+                "Egg",
+                "Fish"
               ]
             },
             {
@@ -837,7 +875,41 @@
           ],
           "inService": true
         }
-      ]
+      ],
+      "breakfast": {
+        "inService": true,
+        "name": "Hot Hands",
+        "tagline": "Breakfast",
+        "hero": "Bacon, Egg and Cheese on Croissant with Sriracha Aioli",
+        "dishes": [
+          {
+            "title": "SRIRACHA AIOLI",
+            "description": "need",
+            "allergens": [
+              "Egg"
+            ]
+          },
+          {
+            "title": "EGG & CHEESE SANDWICH",
+            "description": "Bread*, egg, cheese, salt, black pepper, sriracha, mayo",
+            "allergens": [
+              "Egg",
+              "Milk",
+              "Wheat"
+            ]
+          },
+          {
+            "title": "BACON, EGG & CHEESE SANDWICH",
+            "description": "bread*, bacon, egg, cheese, salt, black pepper, sriracha, mayo",
+            "allergens": [
+              "Egg",
+              "Milk",
+              "Wheat"
+            ]
+          }
+        ],
+        "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
+      }
     },
     {
       "day": "Wednesday",
@@ -885,8 +957,8 @@
           "hero": "Pomegranate & Zaatar Glazed Pork Ribs",
           "heroAllergens": [
             "Sesame",
-            "Milk",
-            "Wheat"
+            "Wheat",
+            "Milk"
           ],
           "dishes": [
             {
@@ -912,8 +984,8 @@
               "title": "EGYPTIAN MAC & CHEESE",
               "description": "Elbow Pasta, Milk, Flour, Butter, Cheddar Cheese, Urfa Bieber Chili, Salt, Pepper",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
@@ -997,24 +1069,24 @@
           "tagline": "Sandwiches, pizzas, and other handhelds",
           "hero": "Sausage, Onion, Pepper, and Arrabiata Pizza",
           "heroAllergens": [
-            "Milk",
-            "Wheat"
+            "Wheat",
+            "Milk"
           ],
           "dishes": [
             {
               "title": "Roasted Squash, garlic confit, & Arugula Pizza",
               "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour), Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) squash, garlic, arugula",
               "allergens": [
-                "Milk",
-                "Wheat"
+                "Wheat",
+                "Milk"
               ]
             },
             {
               "title": "Sausage, Onion, Pepper, and Arrabiata Sauce PIZZA",
               "description": "Pizza Dough (Flour, Barley Malt, Yeast, Olive Oil, Salt, Edison Bread Flour) Tomato Sauce (Crushed Tomato, Olive Oil, Onion, Garlic, Basil, Oregano, Salt, Pepper) Sausage, onion, bell pepper",
               "allergens": [
-                "Wheat",
-                "Milk"
+                "Milk",
+                "Wheat"
               ]
             },
             {
@@ -1146,8 +1218,8 @@
               "description": "",
               "allergens": [
                 "Milk",
-                "Egg",
-                "Fish"
+                "Fish",
+                "Egg"
               ]
             },
             {
@@ -1246,7 +1318,32 @@
           ],
           "inService": true
         }
-      ]
+      ],
+      "breakfast": {
+        "inService": true,
+        "name": "Hot Hands",
+        "tagline": "Breakfast",
+        "hero": "Chinese tomato egg",
+        "dishes": [
+          {
+            "title": "CHINESE TOMATO & TOFU STIR FRY",
+            "description": "rice, tomato, scallion, tofu, salt, white pepper, sesame oil, Shaoxing wine, non-GMO rice bran oil, sugar",
+            "allergens": [
+              "Sesame",
+              "Soy"
+            ]
+          },
+          {
+            "title": "CHINESE TOMATO EGG STIR FRY & RICE",
+            "description": "rice, tomato, scallion, egg, salt, white pepper, sesame oil, Shaoxing wine, non-GMO rice bran oil, sugar",
+            "allergens": [
+              "Egg",
+              "Sesame"
+            ]
+          }
+        ],
+        "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
+      }
     },
     {
       "day": "Thursday",
@@ -1643,7 +1740,15 @@
           ],
           "inService": true
         }
-      ]
+      ],
+      "breakfast": {
+        "inService": false,
+        "name": "Hot Hands",
+        "tagline": "Breakfast",
+        "hero": "",
+        "dishes": [],
+        "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
+      }
     },
     {
       "day": "Friday",
@@ -1970,7 +2075,15 @@
           ],
           "inService": true
         }
-      ]
+      ],
+      "breakfast": {
+        "inService": false,
+        "name": "Hot Hands",
+        "tagline": "Breakfast",
+        "hero": "",
+        "dishes": [],
+        "sourceUrl": "https://snowflake.sifted.co/bellevue/meals"
+      }
     }
   ]
 }

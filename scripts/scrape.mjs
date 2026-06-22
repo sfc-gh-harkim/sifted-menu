@@ -20,6 +20,10 @@ const STATIONS = [
   { id: "sweet-spot", name: "Sweet Spot", url: "https://eat.sifted.co/meals/e9699fc9-3bc1-4d04-be64-68ae4865b39a", tagline: "A little something sweet to finish" },
 ];
 
+const BELLEVUE_MARKET_URL = "https://snowflake.sifted.co/api/markets/snowflake/bellevue";
+const BELLEVUE_MEALS_URL = "https://snowflake.sifted.co/api/markets/meals";
+const BREAKFAST_SOURCE_URL = "https://snowflake.sifted.co/bellevue/meals";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
@@ -32,6 +36,72 @@ async function fetchHtml(url) {
   });
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.text();
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "user-agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) sifted-menu-scraper/1.0",
+      accept: "application/json",
+    },
+  });
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  return res.json();
+}
+
+function parseMenuDate(dateStr) {
+  const d = new Date(dateStr);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toISOString().slice(0, 10);
+}
+
+async function getBellevueMarketId() {
+  const { data } = await fetchJson(BELLEVUE_MARKET_URL);
+  if (!data?.id) throw new Error("Bellevue market id missing from API response");
+  return data.id;
+}
+
+function emptyBreakfast() {
+  return {
+    inService: false,
+    name: "Hot Hands",
+    tagline: "Breakfast",
+    hero: "",
+    dishes: [],
+    sourceUrl: BREAKFAST_SOURCE_URL,
+  };
+}
+
+async function fetchHotHandsBreakfast(marketId, isoDate) {
+  const url = `${BELLEVUE_MEALS_URL}?id=${encodeURIComponent(marketId)}&date=${encodeURIComponent(isoDate)}`;
+  const { data } = await fetchJson(url);
+
+  for (const item of data ?? []) {
+    if (item.serviceLine?.name?.toLowerCase() !== "breakfast") continue;
+    for (const menu of item.menus ?? []) {
+      if (menu.brand?.name !== "Hot Hands") continue;
+
+      const dishes = (menu.scheduledElements ?? [])
+        .map((el) => ({
+          title: (el.name ?? "").trim(),
+          description: (el.ingredients ?? "").trim(),
+          allergens: [...new Set((el.allergens ?? []).filter(Boolean))],
+        }))
+        .filter((d) => d.title);
+
+      return {
+        inService: true,
+        name: "Hot Hands",
+        tagline: "Breakfast",
+        hero: (menu.name ?? "").trim(),
+        dishes,
+        sourceUrl: BREAKFAST_SOURCE_URL,
+      };
+    }
+  }
+
+  return emptyBreakfast();
 }
 
 function parseStation(html, station) {
@@ -151,12 +221,45 @@ async function main() {
     );
   }
 
+  process.stderr.write("Fetching Hot Hands breakfast from Bellevue portal...\n");
+  let marketId;
+  try {
+    marketId = await getBellevueMarketId();
+  } catch (err) {
+    process.stderr.write(`Warning: could not load Bellevue market (${err.message})\n`);
+  }
+
+  for (const d of days) {
+    if (!marketId) {
+      d.breakfast = emptyBreakfast();
+      continue;
+    }
+    const isoDate = parseMenuDate(d.date);
+    if (!isoDate) {
+      d.breakfast = emptyBreakfast();
+      continue;
+    }
+    try {
+      d.breakfast = await fetchHotHandsBreakfast(marketId, isoDate);
+    } catch (err) {
+      process.stderr.write(`Warning: breakfast scrape failed for ${d.day} (${err.message})\n`);
+      d.breakfast = emptyBreakfast();
+    }
+  }
+
   const out = {
     generatedAt: new Date().toISOString(),
     weekLabel: stations[0]?.weekLabel ?? "",
     surveyUrl:
       "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
-    sources: STATIONS.map(({ id, name, url }) => ({ id, name, url })),
+    sources: [
+      {
+        id: "breakfast",
+        name: "Hot Hands Breakfast",
+        url: BREAKFAST_SOURCE_URL,
+      },
+      ...STATIONS.map(({ id, name, url }) => ({ id, name, url })),
+    ],
     days,
   };
 

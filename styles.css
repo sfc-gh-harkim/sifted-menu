@@ -12,6 +12,8 @@
   --tag-ink: #4a4a52;
   --tip-bg: #0c0c0d;
   --tip-text: #ffffff;
+  --breakfast-bg: #f7f7f8;
+  --breakfast-border: #ececef;
   --shadow-card: 0 80px 160px -40px rgba(12, 12, 13, 0.08),
     0 24px 60px -28px rgba(12, 12, 13, 0.04);
   --display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -135,6 +137,72 @@ a {
   text-align: center;
   color: var(--ink-soft);
   padding: 48px 0;
+}
+
+/* Hot Hands breakfast — full-width band at top of menu card */
+.breakfast {
+  text-align: center;
+  background: var(--breakfast-bg);
+  border: 1px solid var(--breakfast-border);
+  padding: clamp(24px, 3vw, 32px) clamp(20px, 3vw, 28px);
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+.breakfast--off {
+  opacity: 0.5;
+}
+.breakfast--off .breakfast__name a {
+  pointer-events: none;
+}
+.breakfast__head {
+  margin-bottom: 12px;
+}
+.breakfast__label {
+  font-family: var(--text);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+.breakfast__name {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin: 0;
+  line-height: 1.15;
+}
+.breakfast__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+.breakfast__name a:hover {
+  color: var(--accent);
+}
+.breakfast__hero {
+  font-family: var(--display);
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+.breakfast__dishes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breakfast__dishes .dish {
+  justify-content: center;
+}
+.breakfast__empty {
+  font-family: var(--text);
+  color: var(--ink-faint);
+  font-size: 13px;
+  font-style: italic;
+  margin: 0;
 }
 
 /* Single outer wrapper containing all stations */
@@ -491,6 +559,8 @@ a {
     --tag-ink: #c5c5cd;
     --tip-bg: #f5f5f7;
     --tip-text: #0c0c0d;
+    --breakfast-bg: #1a1a1c;
+    --breakfast-border: #26262a;
     --shadow-card: 0 80px 160px -30px rgba(0, 0, 0, 0.4),
       0 24px 60px -28px rgba(0, 0, 0, 0.25);
   }
@@ -532,6 +602,8 @@ a {
   --tag-ink: #c5c5cd;
   --tip-bg: #f5f5f7;
   --tip-text: #0c0c0d;
+  --breakfast-bg: #1a1a1c;
+  --breakfast-border: #26262a;
   --shadow-card: 0 80px 160px -30px rgba(0, 0, 0, 0.4),
     0 24px 60px -28px rgba(0, 0, 0, 0.25);
 }
