@@ -163,7 +163,7 @@ a {
 .station__head .menu-section__title {
   margin-bottom: 0;
 }
-.menu-section--lunch .menu-section__title {
+.menu-section--lunch .station__head {
   margin-bottom: clamp(28px, 4vw, 40px);
 }
 .menu-divider {

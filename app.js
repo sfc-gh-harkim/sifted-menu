@@ -2,6 +2,11 @@
 
 const DATA_URL = "./data/menu.json";
 
+// Service hours from snowflake.sifted.co (Bellevue office).
+const BREAKFAST_HOURS = "8–9:30am";
+const CONTINENTAL_BREAKFAST_HOURS = "7–10am";
+const LUNCH_HOURS = "11:30am–1:30pm";
+
 const SHORT_DAY = {
   Monday: "Mon",
   Tuesday: "Tue",
@@ -295,7 +300,7 @@ function renderBreakfast(breakfast) {
   const head = `
     <header class="station__head">
       <h2 class="menu-section__title">${titleInner}</h2>
-      <p class="station__tagline">Continental breakfast also available</p>
+      <p class="station__tagline">${escape(BREAKFAST_HOURS)} · Continental breakfast also available ${escape(CONTINENTAL_BREAKFAST_HOURS)}</p>
     </header>
   `;
 
@@ -347,7 +352,10 @@ function renderDay(day, sourcesById) {
       ${renderBreakfast(day.breakfast)}
       <hr class="menu-divider" />
       <section class="menu-section menu-section--lunch">
-        <h2 class="menu-section__title">Lunch</h2>
+        <header class="station__head">
+          <h2 class="menu-section__title">Lunch</h2>
+          <p class="station__tagline">${escape(LUNCH_HOURS)}</p>
+        </header>
         <div class="stations-grid">${stations}</div>
       </section>
     </div>
