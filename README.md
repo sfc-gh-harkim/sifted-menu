@@ -17,8 +17,9 @@ for that day on a single page laid out like a fancy restaurant menu.
    `data/menu.json` and renders the selected day.
 3. The Action then publishes the site to GitHub Pages.
 
-The scraper runs every weekday morning at 06:00 PT and on every push to
-`main`. Run it manually from the **Actions** tab via _Run workflow_.
+The scraper runs on a weekday morning schedule (targeting ~7am PT, accounting
+for GitHub Actions queue delays) and on every push to `main`. Run it manually
+from the **Actions** tab via _Run workflow_.
 
 ## Local development
 
