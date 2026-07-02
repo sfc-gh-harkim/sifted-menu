@@ -1,15 +1,10 @@
 #!/usr/bin/env node
-// Scrapes the public Sifted menu pages for each Snowflake Bellevue station and
-// writes a single normalized menu.json for the static site to consume.
-//
-// The static site flips Sifted's mental model: instead of one URL per station
-// covering a whole week, we group every station under a single day so a diner
-// can see all options for *today* at a glance.
+// Fetches Bellevue lunch + breakfast menus from the Sifted portal API and writes
+// data/menu.json grouped by day (all stations for each day).
 
 import { writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import * as cheerio from "cheerio";
 
 const STATIONS = [
   { id: "pure", name: "Pure", url: "https://eat.sifted.co/meals/659a82e0-6f43-432e-acf9-af733a7e1ef6", tagline: "Clean, vibrant, plant-forward" },
@@ -20,29 +15,34 @@ const STATIONS = [
   { id: "sweet-spot", name: "Sweet Spot", url: "https://eat.sifted.co/meals/e9699fc9-3bc1-4d04-be64-68ae4865b39a", tagline: "A little something sweet to finish" },
 ];
 
+const STATION_BY_ID = new Map(STATIONS.map((s) => [s.id, s]));
+const STATION_ORDER = STATIONS.map((s) => s.id);
+
 const BELLEVUE_MARKET_URL = "https://snowflake.sifted.co/api/markets/snowflake/bellevue";
 const BELLEVUE_MEALS_URL = "https://snowflake.sifted.co/api/markets/meals";
 const BREAKFAST_SOURCE_URL = "https://snowflake.sifted.co/bellevue/meals";
 
+const DAY_NAMES = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const HOT_BREAKFAST_BRANDS = new Set(["Hot Hands", "Hot Breakfast"]);
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-
-async function fetchHtml(url) {
-  const res = await fetch(url, {
-    headers: {
-      "user-agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) sifted-menu-scraper/1.0",
-    },
-  });
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-  return res.text();
-}
+const OUT_PATH = resolve(ROOT, "data", "menu.json");
 
 async function fetchJson(url) {
   const res = await fetch(url, {
     headers: {
       "user-agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) sifted-menu-scraper/1.0",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) sifted-menu-scraper/2.0",
       accept: "application/json",
     },
   });
@@ -50,20 +50,66 @@ async function fetchJson(url) {
   return res.json();
 }
 
-function parseMenuDate(dateStr) {
-  const d = new Date(dateStr);
-  if (Number.isNaN(d.getTime())) return null;
-  // Format as YYYY-MM-DD in local time — avoid toISOString() UTC drift.
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
+function normalizeBrand(name) {
+  return String(name ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
-async function getBellevueMarketId() {
-  const { data } = await fetchJson(BELLEVUE_MARKET_URL);
-  if (!data?.id) throw new Error("Bellevue market id missing from API response");
-  return data.id;
+const STATION_ID_BY_BRAND = new Map(
+  [
+    ["pure", "pure"],
+    ["rotating plate", "rotating-plate"],
+    ["wok n tandoor", "wok-n-tandoor"],
+    ["hot hands", "hot-hands"],
+    ["wrap culture", "wrap-culture"],
+    ["sweet spot", "sweet-spot"],
+  ],
+);
+
+function stationIdForBrand(brandName) {
+  return STATION_ID_BY_BRAND.get(normalizeBrand(brandName)) ?? null;
+}
+
+function isoDateLocal(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function formatMenuDate(date) {
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+function mondayOfWeek(ref = new Date()) {
+  const d = new Date(ref);
+  d.setHours(12, 0, 0, 0);
+  const day = d.getDay();
+  const offset = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + offset);
+  return d;
+}
+
+export function weekLabelForDate(ref = new Date()) {
+  const monday = mondayOfWeek(ref);
+  const day = monday.getDate();
+  const month = monday.toLocaleDateString("en-GB", { month: "long" });
+  return `Week of ${day} ${month}`;
+}
+
+function weekdayDatesForWeek(ref = new Date()) {
+  const monday = mondayOfWeek(ref);
+  return Array.from({ length: 5 }, (_, i) => {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    return d;
+  });
 }
 
 function emptyBreakfast() {
@@ -77,189 +123,126 @@ function emptyBreakfast() {
   };
 }
 
-const HOT_BREAKFAST_BRANDS = new Set(["Hot Hands", "Hot Breakfast"]);
-
-function isHotBreakfastBrand(name) {
-  return HOT_BREAKFAST_BRANDS.has(name);
+function dishesFromElements(elements) {
+  return (elements ?? [])
+    .map((el) => ({
+      title: (el.name ?? "").trim(),
+      description: (el.ingredients ?? "").trim(),
+      allergens: [...new Set((el.allergens ?? []).filter(Boolean))],
+    }))
+    .filter((d) => d.title);
 }
 
-async function fetchHotHandsBreakfast(marketId, isoDate) {
+function stationFromMenu(menu, meta) {
+  return {
+    id: meta.id,
+    name: meta.name,
+    tagline: meta.tagline,
+    hero: (menu.name ?? "").trim(),
+    heroAllergens: [],
+    dishes: dishesFromElements(menu.scheduledElements),
+    inService: true,
+  };
+}
+
+function offServiceStation(meta) {
+  return {
+    id: meta.id,
+    name: meta.name,
+    tagline: meta.tagline,
+    hero: "",
+    heroAllergens: [],
+    dishes: [],
+    inService: false,
+  };
+}
+
+async function getBellevueMarketId() {
+  const { data } = await fetchJson(BELLEVUE_MARKET_URL);
+  if (!data?.id) throw new Error("Bellevue market id missing from API response");
+  return data.id;
+}
+
+async function fetchMealsForDate(marketId, isoDate) {
   const url = `${BELLEVUE_MEALS_URL}?id=${encodeURIComponent(marketId)}&date=${encodeURIComponent(isoDate)}`;
   const { data } = await fetchJson(url);
+  return data ?? [];
+}
 
-  for (const item of data ?? []) {
+function breakfastFromPayload(payload) {
+  for (const item of payload) {
     if (item.serviceLine?.name?.toLowerCase() !== "breakfast") continue;
     for (const menu of item.menus ?? []) {
-      if (!isHotBreakfastBrand(menu.brand?.name)) continue;
-
-      const dishes = (menu.scheduledElements ?? [])
-        .map((el) => ({
-          title: (el.name ?? "").trim(),
-          description: (el.ingredients ?? "").trim(),
-          allergens: [...new Set((el.allergens ?? []).filter(Boolean))],
-        }))
-        .filter((d) => d.title);
-
+      if (!HOT_BREAKFAST_BRANDS.has(menu.brand?.name)) continue;
       return {
         inService: true,
         name: "Hot Hands",
         tagline: "Breakfast",
         hero: (menu.name ?? "").trim(),
-        dishes,
+        dishes: dishesFromElements(menu.scheduledElements),
         sourceUrl: BREAKFAST_SOURCE_URL,
       };
     }
   }
-
   return emptyBreakfast();
 }
 
-function parseStation(html, station) {
-  const $ = cheerio.load(html);
-
-  const weekLabel = $("nav .bold").first().text().trim();
-
-  const days = [];
-  $("#menu-list > div").each((_, dayEl) => {
-    const $day = $(dayEl);
-    const dayHeader = $day.find("[id]").first();
-    const dayName = dayHeader.find("p").eq(0).text().trim();
-    const dayDate = dayHeader.find("p").eq(1).text().trim();
-    if (!dayName) return;
-
-    const $menu = $day.find(".menu");
-    const heroTitle = $menu.find("h2").first().text().trim();
-
-    // Top-level allergens (the ones rendered next to the hero h2, not inside details).
-    const heroAllergens = [];
-    $menu
-      .find("> .flex.gap-x-3 + div img, > div > img.w-9")
-      .each((_, img) => {
-        const a = $(img).attr("alt");
-        if (a && !heroAllergens.includes(a)) heroAllergens.push(a);
-      });
-
-    const dishes = [];
-    $menu.find("details > div > div.px, details > div > div").each((_, dishEl) => {
-      const $dish = $(dishEl);
-      const $h3 = $dish.find("h3").first();
-      if (!$h3.length) return;
-      const title = $h3.text().trim();
-      const description = $dish.find("p").first().text().trim();
-      const allergens = [];
-      $dish.find("img").each((_, img) => {
-        const a = $(img).attr("alt");
-        if (a && !allergens.includes(a)) allergens.push(a);
-      });
-      if (title) dishes.push({ title, description, allergens });
-    });
-
-    if (!heroTitle && dishes.length === 0) return;
-
-    days.push({
-      day: dayName,
-      date: dayDate,
-      hero: heroTitle,
-      heroAllergens,
-      dishes,
-    });
-  });
-
-  return {
-    id: station.id,
-    name: station.name,
-    tagline: station.tagline,
-    sourceUrl: station.url,
-    weekLabel,
-    days,
-  };
+function lunchStationsFromPayload(payload) {
+  const lunch = payload.find(
+    (item) => item.serviceLine?.name?.toLowerCase() === "lunch",
+  );
+  const byId = new Map();
+  for (const menu of lunch?.menus ?? []) {
+    const stationId = stationIdForBrand(menu.brand?.name);
+    if (!stationId) continue;
+    const meta = STATION_BY_ID.get(stationId);
+    if (!meta) continue;
+    byId.set(stationId, stationFromMenu(menu, meta));
+  }
+  return byId;
 }
 
-async function main() {
-  const stations = [];
-  for (const station of STATIONS) {
-    process.stderr.write(`Fetching ${station.name}...\n`);
-    const html = await fetchHtml(station.url);
-    stations.push(parseStation(html, station));
-  }
+export async function scrapeMenu() {
+  const marketId = await getBellevueMarketId();
+  const days = [];
 
-  const dayOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  const byDay = new Map();
-  for (const station of stations) {
-    for (const day of station.days) {
-      if (!byDay.has(day.day)) {
-        byDay.set(day.day, { day: day.day, date: day.date, stations: [] });
-      }
-      byDay.get(day.day).stations.push({
-        id: station.id,
-        name: station.name,
-        tagline: station.tagline,
-        hero: day.hero,
-        heroAllergens: day.heroAllergens,
-        dishes: day.dishes,
-        inService: true,
-      });
-    }
-  }
+  for (const date of weekdayDatesForWeek()) {
+    const isoDate = isoDateLocal(date);
+    process.stderr.write(`Fetching ${isoDate}...\n`);
 
-  // Make sure every station appears on every day, marking the ones the
-  // source page didn't list as "not in service" so they still render.
-  for (const d of byDay.values()) {
-    const present = new Set(d.stations.map((s) => s.id));
-    for (const meta of STATIONS) {
-      if (present.has(meta.id)) continue;
-      d.stations.push({
-        id: meta.id,
-        name: meta.name,
-        tagline: meta.tagline,
-        hero: "",
-        heroAllergens: [],
-        dishes: [],
-        inService: false,
-      });
-    }
-  }
-
-  const days = Array.from(byDay.values()).sort(
-    (a, b) => dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day),
-  );
-
-  const stationOrder = STATIONS.map((s) => s.id);
-  for (const d of days) {
-    d.stations.sort(
-      (a, b) => stationOrder.indexOf(a.id) - stationOrder.indexOf(b.id),
-    );
-  }
-
-  process.stderr.write("Fetching Hot Hands breakfast from Bellevue portal...\n");
-  let marketId;
-  try {
-    marketId = await getBellevueMarketId();
-  } catch (err) {
-    process.stderr.write(`Warning: could not load Bellevue market (${err.message})\n`);
-  }
-
-  for (const d of days) {
-    if (!marketId) {
-      d.breakfast = emptyBreakfast();
-      continue;
-    }
-    const isoDate = parseMenuDate(d.date);
-    if (!isoDate) {
-      d.breakfast = emptyBreakfast();
-      continue;
-    }
+    let payload;
     try {
-      d.breakfast = await fetchHotHandsBreakfast(marketId, isoDate);
+      payload = await fetchMealsForDate(marketId, isoDate);
     } catch (err) {
-      process.stderr.write(`Warning: breakfast scrape failed for ${d.day} (${err.message})\n`);
-      d.breakfast = emptyBreakfast();
+      process.stderr.write(`Warning: meals fetch failed for ${isoDate} (${err.message})\n`);
+      continue;
     }
+
+    const lunchById = lunchStationsFromPayload(payload);
+    if (lunchById.size === 0) continue;
+
+    const stations = STATION_ORDER.map((id) => {
+      return lunchById.get(id) ?? offServiceStation(STATION_BY_ID.get(id));
+    });
+
+    let breakfast = emptyBreakfast();
+    try {
+      breakfast = breakfastFromPayload(payload);
+    } catch (err) {
+      process.stderr.write(`Warning: breakfast parse failed for ${isoDate} (${err.message})\n`);
+    }
+
+    days.push({
+      day: DAY_NAMES[date.getDay()],
+      date: formatMenuDate(date),
+      stations,
+      breakfast,
+    });
   }
 
-  const out = {
+  return {
     generatedAt: new Date().toISOString(),
-    weekLabel: stations[0]?.weekLabel ?? "",
+    weekLabel: weekLabelForDate(),
     surveyUrl:
       "https://cxmresponse.omnixm.com/#/response?q=%26%25$%2Fsid232974%26%25$%2F%3D6399%3DRestaurant%3Dfalse%3D0%3D0%3D0%3DWebLink%3D0",
     sources: [
@@ -272,16 +255,40 @@ async function main() {
     ],
     days,
   };
+}
 
-  await mkdir(resolve(ROOT, "data"), { recursive: true });
-  const outPath = resolve(ROOT, "data", "menu.json");
-  await writeFile(outPath, JSON.stringify(out, null, 2) + "\n");
-  process.stderr.write(
-    `Wrote ${outPath} – ${days.length} days, ${stations.length} stations.\n`,
+export function isValidMenu(menu) {
+  return Boolean(
+    menu &&
+      typeof menu.weekLabel === "string" &&
+      menu.weekLabel.length > 0 &&
+      Array.isArray(menu.days) &&
+      menu.days.length > 0,
   );
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+export async function writeMenu(menu, outPath = OUT_PATH) {
+  await mkdir(dirname(outPath), { recursive: true });
+  await writeFile(outPath, JSON.stringify(menu, null, 2) + "\n");
+}
+
+async function main() {
+  const menu = await scrapeMenu();
+  if (!isValidMenu(menu)) {
+    throw new Error("Scrape produced no menu days");
+  }
+  await writeMenu(menu);
+  process.stderr.write(
+    `Wrote ${OUT_PATH} – ${menu.days.length} days, ${STATIONS.length} stations.\n`,
+  );
+}
+
+const isDirectRun = process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

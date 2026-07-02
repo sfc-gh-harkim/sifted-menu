@@ -9,9 +9,9 @@ on:
     # earlier than the desired finish time so breakfast (ends 9:30) still gets
     # fresh data. Off-minute marks reduce collision with other repos' :00 jobs.
     # All times below are PDT (UTC−7); PST runs an hour earlier locally.
-    - cron: "23 10 * * 1-5"  # ~03:23 PDT — early primary
-    - cron: "17 11 * * 1-5"  # ~04:17 PDT — backup
-    - cron: "43 12 * * 1-5"  # ~05:43 PDT — safety net before breakfast
+    - cron: "23 10 * * 1-5"  # ~03:23 PDT — primary (always scrapes)
+    - cron: "17 11 * * 1-5"  # ~04:17 PDT — backup (skip if same-week menu ok)
+    - cron: "43 12 * * 1-5"  # ~05:43 PDT — safety net (skip if same-week menu ok)
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CRON_SLOT: >-
+        ${{
+          github.event_name == 'schedule' && github.event.schedule == '23 10 * * 1-5' && 'primary' ||
+          github.event_name == 'schedule' && github.event.schedule == '17 11 * * 1-5' && 'backup' ||
+          github.event_name == 'schedule' && github.event.schedule == '43 12 * * 1-5' && 'safety' ||
+          'manual'
+        }}
     steps:
       - uses: actions/checkout@v4
 
@@ -35,8 +43,11 @@ jobs:
 
       - run: npm install --no-audit --no-fund
 
-      - name: Scrape Sifted menus
-        run: npm run scrape
+      - name: Build menu data
+        run: npm run build-menu
+
+      - name: Verify menu data
+        run: node --input-type=module -e "import { readFileSync } from 'node:fs'; import { isValidMenu } from './scripts/scrape.mjs'; const menu = JSON.parse(readFileSync('data/menu.json','utf8')); if (!isValidMenu(menu)) { throw new Error('menu.json is empty or invalid'); } console.log('OK:', menu.weekLabel, menu.days.length, 'days');"
 
       - name: Stage site
         run: |

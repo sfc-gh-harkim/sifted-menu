@@ -9,10 +9,11 @@ for that day on a single page laid out like a fancy restaurant menu.
 
 ## How it works
 
-1. A scheduled GitHub Action runs `scripts/scrape.mjs`, which fetches the
-   public Sifted page for each station, parses the HTML with
-   [`cheerio`](https://cheerio.js.org), and writes a normalized
-   `data/menu.json` grouped by day.
+1. A scheduled GitHub Action runs `scripts/ci-menu.mjs`, which fetches lunch
+   and breakfast from the Sifted Bellevue portal API and writes a normalized
+   `data/menu.json` grouped by day. Backup cron slots skip rescraping when a
+   valid same-week menu is already deployed; empty scrapes fall back to the
+   last good menu instead of wiping the site.
 2. The static site (`index.html` + `styles.css` + `app.js`) loads
    `data/menu.json` and renders the selected day.
 3. The Action then publishes the site to GitHub Pages.
