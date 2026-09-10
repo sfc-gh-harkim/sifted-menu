@@ -13,6 +13,7 @@ on:
     - cron: "17 11 * * 1-5"  # ~04:17 PDT — backup (skip if same-week menu ok)
     - cron: "43 12 * * 1-5"  # ~05:43 PDT — safety net (skip if same-week menu ok)
   workflow_dispatch:
+    # Re-enable after GitHub auto-disables scheduled workflows for 60-day inactivity.
 
 permissions:
   contents: read
